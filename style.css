@@ -39,8 +39,33 @@ a{color:inherit; text-decoration:none}
   padding:14px 18px;
 }
 .brand{font-weight:800; letter-spacing:.2px}
-.links a{margin-left:14px; color:var(--muted)}
-.links a:hover{color:var(--text)}
+.links a {
+  margin-left: 14px;
+  color: var(--muted);
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.links a:hover {
+  color: var(--text);
+}
+
+
+.links a.active {
+  color: var(--text);
+}
+
+.links a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  border-radius: 2px;
+}
+
 
 .hero{padding:64px 0 26px}
 .hero h1{
