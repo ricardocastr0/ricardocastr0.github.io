@@ -1,3 +1,6 @@
+html { scroll-behavior: smooth; }
+.section { scroll-margin-top: 90px; padding: 28px 0; }
+
 :root{
   --bg:#0b0d12;
   --card:#121622;
