@@ -1,0 +1,94 @@
+:root{
+  --bg:#0b0d12;
+  --card:#121622;
+  --text:#e9ecf1;
+  --muted:#a6adbb;
+  --line:#232a3a;
+  --accent:#7c5cff;
+
+  --max:980px;
+  --r:16px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  background: radial-gradient(1200px 700px at 20% 0%, rgba(124,92,255,.25), transparent 55%),
+              radial-gradient(900px 600px at 90% 10%, rgba(0,212,255,.12), transparent 55%),
+              var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+
+a{color:inherit; text-decoration:none}
+.container{max-width:var(--max); margin:0 auto; padding:0 18px}
+
+.nav{
+  position:sticky; top:0;
+  background: rgba(11,13,18,.72);
+  backdrop-filter: blur(10px);
+  border-bottom:1px solid var(--line);
+  z-index:10;
+}
+.nav .container{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 18px;
+}
+.brand{font-weight:800; letter-spacing:.2px}
+.links a{margin-left:14px; color:var(--muted)}
+.links a:hover{color:var(--text)}
+
+.hero{padding:64px 0 26px}
+.hero h1{
+  font-size: clamp(28px, 4vw, 46px);
+  line-height:1.1;
+  margin:0 0 12px;
+}
+.hero p{margin:0; color:var(--muted); max-width:64ch}
+.cta{margin-top:18px; display:flex; gap:12px; flex-wrap:wrap}
+
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:10px 14px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background: transparent;
+  color:var(--text);
+}
+.btn.primary{
+  background: linear-gradient(135deg, rgba(124,92,255,.9), rgba(0,212,255,.35));
+  border-color: transparent;
+}
+
+.section{padding:22px 0}
+.section h2{margin:0 0 12px; font-size:18px; letter-spacing:.2px}
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:14px;
+}
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  padding:16px;
+  transition: transform .15s ease, border-color .15s ease;
+}
+.card:hover{transform: translateY(-3px); border-color: rgba(124,92,255,.55)}
+.card h3{margin:0 0 6px; font-size:16px}
+.card p{margin:0; color:var(--muted)}
+
+.skills p{margin:0; color:var(--muted)}
+
+.footer{
+  border-top:1px solid var(--line);
+  margin-top:34px;
+  padding:18px 0;
+  color:var(--muted);
+}
+
+@media (max-width: 860px){
+  .grid{grid-template-columns:1fr}
+}
