@@ -5,17 +5,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects | Ricardo Castro</title>
   <link rel="stylesheet" href="../assets/css/style.css" />
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-/>
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 
 <body data-page="projects">
   <div id="site-header"></div>
 
   <main class="container">
-    <!-- page-specific content -->
+    <section class="hero">
+      <h1>Projects</h1>
+      <p>Selected robotics, controls, and manufacturing work. Click a card to see details.</p>
+    </section>
+
+<section class="section projects">
+  
+  <!-- Project 1 -->
+  <div class="project-row">
+    <img
+      src="/assets/images/teleop-glove.jpg"
+      alt="Teleoperation glove prototype"
+      class="project-image"
+    />
+
+    <div class="project-content">
+      <h2>Teleoperation Glove</h2>
+      <ul>
+        <li>Designed wearable sensing + linkage mechanism for proportional control</li>
+        <li>Iterated joint geometry to reduce mass and improve comfort</li>
+        <li>Integrated mechanical design with control logic</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="project-divider" />
+
+  <!-- Project 2 -->
+  <div class="project-row">
+    <img
+      src="/assets/images/biped-control.jpg"
+      alt="Biped simulation in MuJoCo"
+      class="project-image"
+    />
+
+    <div class="project-content">
+      <h2>Biped Control (MuJoCo)</h2>
+      <ul>
+        <li>Built simulation models to study balance and gait stability</li>
+        <li>Tuned PD controllers toward sim-to-hardware transfer</li>
+        <li>Analyzed failure modes and parameter sensitivity</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="project-divider" />
+
+  <!-- Add more projects the same way -->
+
+</section>
+
   </main>
 
   <div id="site-footer"></div>
