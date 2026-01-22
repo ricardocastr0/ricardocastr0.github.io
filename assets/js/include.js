@@ -1,17 +1,15 @@
-async function inject(id, file) {
+async function inject(id, url) {
   const el = document.getElementById(id);
   if (!el) return;
 
-  const res = await fetch(file);
+  const res = await fetch(url);
+  if (!res.ok) {
+    console.error(`Failed to load ${url}: ${res.status}`);
+    return;
+  }
+
   el.innerHTML = await res.text();
-
-  // Highlight active nav link
-  const page = document.body.dataset.page;
-  if (!page) return;
-
-  const active = el.querySelector(`[data-page="${page}"]`);
-  if (active) active.classList.add("active");
 }
 
-inject("site-header", "header.html");
-inject("site-footer", "footer.html");
+inject("site-header", "/partials/header.html");
+inject("site-footer", "/partials/footer.html");
