@@ -8,18 +8,8 @@
 </head>
 
 <body>
-  <header class="nav">
-    <div class="container">
-      <a class="brand" href="index.html">Ricardo Castro</a>
-      <nav class="links">
-        <a href="projects.html">Projects</a>
-        <a href="experience.html">Experience</a>
-        <a href="about.html">About</a>
-        <a href="resume.html">Resume</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+  <!-- Shared header -->
+  <div id="site-header"></div>
 
   <main class="container">
     <section class="hero">
@@ -62,14 +52,10 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <span>ricardo@your-email.com</span>
-      <span class="sep">•</span>
-      <a href="#">LinkedIn</a>
-      <span class="sep">•</span>
-      <a href="#">GitHub</a>
-    </div>
-  </footer>
+  <!-- Shared footer -->
+  <div id="site-footer"></div>
+
+  <!-- JS include (must be after placeholders) -->
+  <script src="include.js"></script>
 </body>
 </html>
