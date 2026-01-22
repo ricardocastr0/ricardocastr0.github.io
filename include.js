@@ -3,12 +3,14 @@ async function inject(id, file) {
   if (!el) return;
 
   const res = await fetch(file);
-  if (!res.ok) {
-    el.innerHTML = `<!-- Failed to load ${file}: ${res.status} -->`;
-    return;
-  }
-
   el.innerHTML = await res.text();
+
+  // Highlight active nav link
+  const page = document.body.dataset.page;
+  if (!page) return;
+
+  const active = el.querySelector(`[data-page="${page}"]`);
+  if (active) active.classList.add("active");
 }
 
 inject("site-header", "header.html");
