@@ -11,5 +11,5 @@ async function inject(id, url) {
   el.innerHTML = await res.text();
 }
 
-inject("site-header", "/partials/header.html");
-inject("site-footer", "/partials/footer.html");
+inject("site-header", "../partials/header.html");
+inject("site-footer", "../partials/footer.html");
