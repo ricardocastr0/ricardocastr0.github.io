@@ -419,12 +419,18 @@ main {
 }
 
 .exp-main {
-  background: #FDF1DC; /* light beige reminiscent of paper */
-  color: #1a1a1a;
-  max-width: 1100px;
+  width: 100%;
+  max-width: none;     /* KEY: removes the constraint */
+  margin: 0;
+  padding: 140px 0 80px;  /* keep top padding for header space */
+  background: transparent; /* KEY: stops the beige box */
+}
+
+
+.exp-wrap {
+  max-width: 1100px;   /* readable width */
   margin: 0 auto;
-  padding: 140px 32px 80px; /* top padding ensures content doesn’t overlap the fixed header */
-  font-family: "Courier New", Courier, monospace;
+  padding: 0 56px;     /* side gutters */
 }
 
 /* Generic section spacing */
@@ -437,6 +443,17 @@ main {
   font-size: 2.4rem;
   margin: 0 0 32px;
   font-weight: 600;
+}
+
+
+/* Make the entire experience page use the light background */
+html, body {
+  background: #FDF1DC;
+}
+
+body.experience-page {
+  background: #FDF1DC;
+  color: #111; /* optional: improves readability on light bg */
 }
 
 /* Section headings for each category */

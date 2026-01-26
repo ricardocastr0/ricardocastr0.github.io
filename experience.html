@@ -4,123 +4,131 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Experience — Ricardo Castro</title>
+
   <!-- Base stylesheet for common styles -->
   <link rel="stylesheet" href="assets/css/style.css" />
-  <!-- Page‑specific styles for the experience layout -->
+  <!-- Page-specific styles for the experience layout -->
   <link rel="stylesheet" href="assets/css/experience.css" />
+
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
   />
 </head>
-<body>
+
+<body class="experience-page">
   <!-- Inject the site header from partials/header.html via include.js -->
   <div id="site-header"></div>
 
   <main class="exp-main">
-    <!-- Top heading for the page -->
-    <section class="exp-section">
-      <h1>Experience</h1>
-    </section>
+    <!-- Wrapper starts here -->
+    <div class="exp-wrap">
 
-    <!-- Engineering roles: emphasises technical work in robotics and controls -->
-    <section class="exp-section">
-      <h2>Engineering Experience</h2>
+      <!-- Top heading for the page -->
+      <section class="exp-section">
+        <h1>Experience</h1>
+      </section>
 
-      <!-- Origami Robotics entry -->
-      <div class="exp-entry">
-        <div class="exp-logo">
-          <!-- Replace the placeholder path with an actual logo file if available -->
-          <img src="assets/images/origami-logo.png" alt="Origami Robotics logo" />
-        </div>
-        <div class="exp-details">
-          <h3 class="exp-job">
-            Mechanical Engineering Intern —
-            <a href="https://www.origamirobotics.com" target="_blank">Origami Robotics</a>
-          </h3>
-          <ul>
-            <li>Designed and prototyped a 3D‑printed teleoperation glove translating finger kinematics into robotic inputs</li>
-            <li>Officially a Y Combinator startup (<a href="https://www.origamirobotics.com" target="_blank">source</a>)</li>
-          </ul>
-        </div>
-      </div>
-      <div class="exp-divider" role="separator" aria-hidden="true"></div>
+      <!-- Engineering roles: emphasises technical work in robotics and controls -->
+      <section class="exp-section">
+        <h2>Engineering Experience</h2>
 
-      <!-- RoboMechanics Lab entry -->
-      <div class="exp-entry">
-        <div class="exp-logo">
-          <img src="assets/images/rml-logo.png" alt="RoboMechanics Lab logo" />
+        <!-- Origami Robotics entry -->
+        <div class="exp-entry">
+          <div class="exp-logo">
+            <img src="assets/images/origami-logo.png" alt="Origami Robotics logo" />
+          </div>
+          <div class="exp-details">
+            <h3 class="exp-job">
+              Mechanical Engineering Intern —
+              <a href="https://www.origamirobotics.com" target="_blank">Origami Robotics</a>
+            </h3>
+            <ul>
+              <li>Designed and prototyped a 3D-printed teleoperation glove translating finger kinematics into robotic inputs</li>
+              <li>Officially a Y Combinator startup (<a href="https://www.origamirobotics.com" target="_blank">source</a>)</li>
+            </ul>
+          </div>
         </div>
-        <div class="exp-details">
-          <h3 class="exp-job">
-            Research Assistant —
-            <a href="https://www.cmu.edu/" target="_blank">RoboMechanics Lab (RML)</a>
-          </h3>
-          <ul>
-            <li>Designed and simulated bipedal mechanisms and walking behaviours; iterated between CAD and dynamics models</li>
-            <li>Supported hardware builds and tests to transfer simulation‑verified designs into physical prototypes</li>
-            <li>Documented experiments and results to guide successive design revisions</li>
-          </ul>
-        </div>
-      </div>
-      <div class="exp-divider" role="separator" aria-hidden="true"></div>
+        <div class="exp-divider" role="separator" aria-hidden="true"></div>
 
-      <!-- MFI entry -->
-      <div class="exp-entry">
-        <div class="exp-logo">
-          <img src="assets/images/mfi-logo.png" alt="MFI logo" />
+        <!-- RoboMechanics Lab entry -->
+        <div class="exp-entry">
+          <div class="exp-logo">
+            <img src="assets/images/rml-logo.png" alt="RoboMechanics Lab logo" />
+          </div>
+          <div class="exp-details">
+            <h3 class="exp-job">
+              Research Assistant —
+              <a href="https://www.cmu.edu/" target="_blank">RoboMechanics Lab (RML)</a>
+            </h3>
+            <ul>
+              <li>Designed and simulated bipedal mechanisms and walking behaviours; iterated between CAD and dynamics models</li>
+              <li>Supported hardware builds and tests to transfer simulation-verified designs into physical prototypes</li>
+              <li>Documented experiments and results to guide successive design revisions</li>
+            </ul>
+          </div>
         </div>
-        <div class="exp-details">
-          <h3 class="exp-job">
-            Engineering Intern —
-            <a href="https://www.mfi.org/" target="_blank">MFI</a>
-          </h3>
-          <ul>
-            <li>Supported design and fabrication work under manufacturing constraints</li>
-            <li>Produced CAD and shop‑ready documentation; iterated designs during build and test</li>
-            <li>Coordinated with technicians to refine mechanisms for reliability and assembly</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+        <div class="exp-divider" role="separator" aria-hidden="true"></div>
 
-    <!-- Non‑technical or teaching roles: emphasises communication and support skills -->
-    <section class="exp-section">
-      <h2>Work Experience</h2>
+        <!-- MFI entry -->
+        <div class="exp-entry">
+          <div class="exp-logo">
+            <img src="assets/images/mfi-logo.png" alt="MFI logo" />
+          </div>
+          <div class="exp-details">
+            <h3 class="exp-job">
+              Engineering Intern —
+              <a href="https://www.mfi.org/" target="_blank">MFI</a>
+            </h3>
+            <ul>
+              <li>Supported design and fabrication work under manufacturing constraints</li>
+              <li>Produced CAD and shop-ready documentation; iterated designs during build and test</li>
+              <li>Coordinated with technicians to refine mechanisms for reliability and assembly</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-      <!-- Teaching Assistant entry -->
-      <div class="exp-entry">
-        <div class="exp-logo placeholder-logo">
-          <span>CMU</span>
-        </div>
-        <div class="exp-details">
-          <h3 class="exp-job">
-            Teaching Assistant — <span>Mechanical Engineering</span>
-          </h3>
-          <ul>
-            <li>Led office hours and recitations; explained core concepts and guided problem‑solving</li>
-            <li>Supported students with clear technical communication and structured feedback</li>
-          </ul>
-        </div>
-      </div>
-      <div class="exp-divider" role="separator" aria-hidden="true"></div>
+      <!-- Non-technical or teaching roles: emphasises communication and support skills -->
+      <section class="exp-section">
+        <h2>Work Experience</h2>
 
-      <!-- Course Grader entry -->
-      <div class="exp-entry">
-        <div class="exp-logo placeholder-logo">
-          <span>CMU</span>
+        <!-- Teaching Assistant entry -->
+        <div class="exp-entry">
+          <div class="exp-logo placeholder-logo">
+            <span>CMU</span>
+          </div>
+          <div class="exp-details">
+            <h3 class="exp-job">
+              Teaching Assistant — <span>Mechanical Engineering</span>
+            </h3>
+            <ul>
+              <li>Led office hours and recitations; explained core concepts and guided problem-solving</li>
+              <li>Supported students with clear technical communication and structured feedback</li>
+            </ul>
+          </div>
         </div>
-        <div class="exp-details">
-          <h3 class="exp-job">
-            Course Grader — <span>Dynamic Systems &amp; Controls; Fluid Mechanics</span>
-          </h3>
-          <ul>
-            <li>Evaluated assignments for correctness and clarity; maintained consistent grading standards</li>
-            <li>Flagged common misconceptions to help improve future instruction</li>
-          </ul>
+        <div class="exp-divider" role="separator" aria-hidden="true"></div>
+
+        <!-- Course Grader entry -->
+        <div class="exp-entry">
+          <div class="exp-logo placeholder-logo">
+            <span>CMU</span>
+          </div>
+          <div class="exp-details">
+            <h3 class="exp-job">
+              Course Grader — <span>Dynamic Systems &amp; Controls; Fluid Mechanics</span>
+            </h3>
+            <ul>
+              <li>Evaluated assignments for correctness and clarity; maintained consistent grading standards</li>
+              <li>Flagged common misconceptions to help improve future instruction</li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+    </div>
+    <!-- Wrapper ends here -->
   </main>
 
   <!-- Inject the site footer via include.js -->
