@@ -446,15 +446,7 @@ main {
 }
 
 
-/* Make the entire experience page use the light background */
-html, body {
-  background: #FDF1DC;
-}
 
-body.experience-page {
-  background: #FDF1DC;
-  color: #111; /* optional: improves readability on light bg */
-}
 
 /* Section headings for each category */
 .exp-section h2 {
