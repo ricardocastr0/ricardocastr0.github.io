@@ -231,6 +231,54 @@ a{color:inherit; text-decoration:none}
   opacity: 1;
 }
 
+/* ================= HERO ================= */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 95vh; /* near full screen */
+  background-image: url("/assets/images/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 13, 18, 0.55); /* dark overlay for contrast */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  max-width: 680px;
+  padding: 0 18px;
+}
+
+.hero-content h1 {
+  font-size: clamp(36px, 6vw, 64px);
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  font-size: clamp(18px, 2.8vw, 24px);
+  margin-bottom: 24px;
+  color: rgba(255,255,255,0.85);
+}
+
+.hero-buttons .btn {
+  margin: 0 8px;
+  font-size: 1rem;
+}
+
+
 /* Mobile */
 @media (max-width: 900px) {
   .projects-grid {
