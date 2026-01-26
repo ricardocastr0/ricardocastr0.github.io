@@ -1,0 +1,155 @@
+<!-- project-template.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>[Project Name] — Ricardo Castro</title>
+
+  <!-- Base site styles (keeps existing background/colors) -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- Project page template styles (safe to append to style.css or include separately) -->
+  <link rel="stylesheet" href="assets/css/project-template.css" />
+</head>
+
+<body>
+  <!-- EDIT: Header injection (optional) -->
+  <div id="site-header"></div>
+
+  <main class="proj-page">
+    <header class="proj-header">
+      <!-- EDIT: Optional status pill (remove if not needed) -->
+      <div class="proj-status-row">
+        <span class="proj-status" aria-label="Project status">[Work in progress]</span>
+      </div>
+
+      <!-- EDIT: Project title -->
+      <h1 class="proj-title">[Project Name]</h1>
+
+      <!-- EDIT: Context + dates -->
+      <p class="proj-subtitle">[Robotics research project] · [Jan 2025 – Present]</p>
+
+      <!-- EDIT: One-line description -->
+      <p class="proj-oneliner">[Built a quasi-passive biped prototype and validated gait behavior through simulation-to-hardware iteration.]</p>
+
+      <!-- EDIT: Skills line -->
+      <p class="proj-skills"><strong>Skills:</strong> [CAD] · [Dynamic Simulation] · [Mechanism Design] · [Prototyping]</p>
+
+      <!-- EDIT: Optional demo / repo link -->
+      <div class="proj-links">
+        <a class="proj-link" href="[https://demo-link.example]" target="_blank" rel="noopener">[Demo / Video]</a>
+        <a class="proj-link" href="[https://github.com/your-repo]" target="_blank" rel="noopener">[Repository]</a>
+      </div>
+
+      <!-- EDIT: Minimal key facts row (keep it short) -->
+      <dl class="proj-facts" aria-label="Key facts">
+        <div class="proj-fact">
+          <dt>Role</dt>
+          <dd>[Mechanical Engineer / Researcher]</dd>
+        </div>
+        <div class="proj-fact">
+          <dt>Team</dt>
+          <dd>[Team size: 3]</dd>
+        </div>
+        <div class="proj-fact">
+          <dt>Location</dt>
+          <dd>[Pittsburgh, PA]</dd>
+        </div>
+        <div class="proj-fact">
+          <dt>Outcome</dt>
+          <dd>[Prototype + validated simulation results]</dd>
+        </div>
+      </dl>
+    </header>
+
+    <section class="proj-section" aria-labelledby="problem-goal">
+      <!-- EDIT: Problem & Goal -->
+      <h2 id="problem-goal">Problem &amp; Goal</h2>
+      <p>[Describe the problem you were solving and the concrete goal in 2–4 sentences. Keep it specific and outcome-oriented.]</p>
+    </section>
+
+    <section class="proj-section" aria-labelledby="constraints">
+      <!-- EDIT: Constraints -->
+      <h2 id="constraints">Constraints</h2>
+      <ul class="proj-bullets">
+        <li>[Constraint #1 — e.g., limited payload / power / budget / time window]</li>
+        <li>[Constraint #2 — e.g., required to work with existing hardware interfaces]</li>
+        <li>[Constraint #3 — e.g., safety / robustness / manufacturability considerations]</li>
+      </ul>
+    </section>
+
+    <section class="proj-section" aria-labelledby="what-i-did">
+      <!-- EDIT: What I Did (and am doing) -->
+      <h2 id="what-i-did">What I Did (and am doing)</h2>
+      <ul class="proj-bullets">
+        <li>[Designed/implemented X to achieve Y; include the technical decision inside the action phrasing.]</li>
+        <li>[Built/validated Z using A/B; mention why that choice mattered (speed, accuracy, robustness).]</li>
+        <li>[Integrated components across hardware/software; include any interfaces, tests, or iteration loops.]</li>
+      </ul>
+    </section>
+
+    <section class="proj-section" aria-labelledby="current-results">
+      <!-- EDIT: Current Results -->
+      <h2 id="current-results">Current Results</h2>
+      <ul class="proj-bullets">
+        <li>[Result #1 — measurable if possible (latency, accuracy, cycle time, weight, cost, reliability).]</li>
+        <li>[Result #2 — what improved compared to baseline.]</li>
+        <li>[Result #3 — what’s validated vs. what’s still in progress.]</li>
+      </ul>
+    </section>
+
+    <section class="proj-section" aria-labelledby="whats-next">
+      <!-- EDIT: What's Next -->
+      <h2 id="whats-next">What’s Next</h2>
+      <ul class="proj-bullets">
+        <li>[Next step #1 — a clear, actionable milestone.]</li>
+        <li>[Next step #2 — what you’ll test/ship/measure next.]</li>
+        <li>[Next step #3 — risk reduction or scaling plan.]</li>
+      </ul>
+    </section>
+
+    <section class="proj-section" aria-labelledby="what-i-learned">
+      <!-- EDIT: What I Learned -->
+      <h2 id="what-i-learned">What I Learned</h2>
+      <ul class="proj-bullets">
+        <li>[Learning #1 — technical insight, tradeoff, or heuristic you gained.]</li>
+        <li>[Learning #2 — process insight: iteration, testing, debugging, documentation.]</li>
+        <li>[Learning #3 — how you’d approach it differently next time.]</li>
+      </ul>
+    </section>
+
+    <section class="proj-section" aria-labelledby="tools">
+      <!-- EDIT: Tools -->
+      <h2 id="tools">Tools</h2>
+      <div class="proj-tools">
+        <span class="tool-pill">[SolidWorks]</span>
+        <span class="tool-pill">[MuJoCo]</span>
+        <span class="tool-pill">[Python]</span>
+        <span class="tool-pill">[C++]</span>
+        <span class="tool-pill">[3D Printing]</span>
+      </div>
+    </section>
+
+    <section class="proj-section" aria-labelledby="artifacts">
+      <!-- EDIT: Artifacts / Links -->
+      <h2 id="artifacts">Artifacts / Links</h2>
+      <ul class="proj-links-list">
+        <li><a href="[https://link.example]" target="_blank" rel="noopener">[Demo video / walkthrough]</a></li>
+        <li><a href="[https://link.example]" target="_blank" rel="noopener">[Design doc / report]</a></li>
+        <li><a href="[https://link.example]" target="_blank" rel="noopener">[CAD / drawings / images]</a></li>
+        <li><a href="[https://link.example]" target="_blank" rel="noopener">[Code repository]</a></li>
+      </ul>
+    </section>
+
+    <footer class="proj-footer">
+      <!-- EDIT: Footer note (optional) -->
+      <p>[Optional: short note about NDA, collaboration credit, or where to learn more.]</p>
+    </footer>
+  </main>
+
+  <!-- EDIT: Footer injection (optional) -->
+  <div id="site-footer"></div>
+
+  <script src="assets/js/include.js"></script>
+</body>
+</html>
