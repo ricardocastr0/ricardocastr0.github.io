@@ -512,6 +512,6 @@ main {
 
 /* Horizontal divider between entries; aligned with the start of the text column */
 .exp-divider {
-  border-top: 1px solid #D2C6A0;
+  border-top: 1px solid #ffffff;
   margin-left: 144px; /* aligns with 120px logo + 24px gap */
 }
