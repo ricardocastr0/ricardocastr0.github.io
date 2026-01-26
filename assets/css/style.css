@@ -1,3 +1,4 @@
+/* Base styles imported from the original repository */
 html { scroll-behavior: smooth; }
 .section { scroll-margin-top: 90px; padding: 28px 0; }
 
@@ -29,16 +30,16 @@ a{color:inherit; text-decoration:none}
 
 .nav {
   width: 100%;
-  padding: 32px 0;           
-  position: absolute;        /* overlays hero */
+  padding: 32px 0;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 10;
-  background: transparent;   
+  background: transparent;
 }
 
 .nav .container {
-  max-width: 1200px;   /* or 1400px */
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 32px;
   display: flex;
@@ -48,20 +49,21 @@ a{color:inherit; text-decoration:none}
 
 /* ================= ABOUT ================= */
 .about-section {
-  padding: 120px 0;
-  background: radial-gradient(
-    circle at top left,
-    rgba(120, 100, 255, 0.15),
-    transparent 60%
-  );
+  /* reduce vertical padding to tighten spacing */
+  padding: 80px 0;
+  /* remove the dark radial-gradient background to eliminate black margins */
+  background: transparent;
 }
 
 .about-container {
-  max-width: 1100px;
+  /* Let the about section span the full width of the page while preserving some horizontal padding */
+  max-width: none;
+  width: 100%;
   margin: 0 auto;
   padding: 0 32px;
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  /* Reserve a fixed column for the photo to avoid large empty gutters on wide screens */
+  grid-template-columns: 320px 1fr;
   gap: 64px;
   align-items: center;
 }
@@ -106,7 +108,6 @@ a{color:inherit; text-decoration:none}
   opacity: 0.6;
 }
 
-
 .brand {
   font-size: 1.25rem;
   font-weight: 600;
@@ -117,11 +118,9 @@ a{color:inherit; text-decoration:none}
   margin-left: 24px;
 }
 
-
 .links a:hover {
   color: var(--text);
 }
-
 
 .links a.active {
   color: var(--text);
@@ -137,7 +136,6 @@ a{color:inherit; text-decoration:none}
   background: linear-gradient(90deg, var(--accent), transparent);
   border-radius: 2px;
 }
-
 
 .hero{padding:64px 0 26px}
 .hero h1{
@@ -202,7 +200,7 @@ a{color:inherit; text-decoration:none}
 }
 
 .footer-icons a i {
-    font-size: 2rem;  /* increase the font-size of the <i> elements */
+    font-size: 2rem;
 }
 .footer-icons a:hover {
   color: var(--text);
@@ -308,7 +306,7 @@ a{color:inherit; text-decoration:none}
   padding-top: 120px;
   position: relative;
   width: 100%;
-  height: 95vh; /* near full screen */
+  height: 95vh;
   background-image: url("/assets/images/hero-bg.jpg");
   background-size: cover;
   background-position: center;
@@ -318,10 +316,11 @@ a{color:inherit; text-decoration:none}
   justify-content: center;
 }
 
+/* Remove the dark overlay so the hero image appears without a tinted background */
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(11, 13, 18, 0.55); /* dark overlay for contrast */
+  background: transparent;
   z-index: 1;
 }
 
@@ -337,7 +336,6 @@ a{color:inherit; text-decoration:none}
 
 .hero-content h1 {
   font-size: clamp(36px, 6vw, 64px);
-  margin-bottom: 12px;
   margin: 0 auto 16px;
   max-width: 1000px;
   font-weight: 700;
@@ -354,6 +352,12 @@ a{color:inherit; text-decoration:none}
   font-size: 1rem;
 }
 
+/* Allow the main element to stretch across the full width of the page */
+main {
+  max-width: none;
+  width: 100%;
+  padding: 0;
+}
 
 /* Mobile */
 @media (max-width: 900px) {
@@ -361,7 +365,6 @@ a{color:inherit; text-decoration:none}
     grid-template-columns: 1fr;
   }
 }
-
 
 @media (max-width: 860px){
   .grid{grid-template-columns:1fr}
