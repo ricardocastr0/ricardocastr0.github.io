@@ -417,3 +417,92 @@ main {
 @media (max-width: 860px){
   .grid{grid-template-columns:1fr}
 }
+
+.exp-main {
+  background: #FDF1DC; /* light beige reminiscent of paper */
+  color: #1a1a1a;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 140px 32px 80px; /* top padding ensures content doesn’t overlap the fixed header */
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* Generic section spacing */
+.exp-section {
+  margin-bottom: 64px;
+}
+
+/* Page title */
+.exp-section h1 {
+  font-size: 2.4rem;
+  margin: 0 0 32px;
+  font-weight: 600;
+}
+
+/* Section headings for each category */
+.exp-section h2 {
+  font-size: 1.8rem;
+  margin: 0 0 24px;
+  font-weight: 600;
+}
+
+/* Each experience entry uses a flex layout to align the logo and details */
+.exp-entry {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 24px 0;
+}
+
+/* Company logo; if an image is provided it will fill the container */
+.exp-logo img {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Placeholder logo styling for roles without a specific image */
+.placeholder-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  background: #EFE5D0;
+  color: #333;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 8px;
+}
+
+/* Details container grows to fill remaining space */
+.exp-details {
+  flex: 1;
+}
+
+/* Role title and company; company names are links when available */
+.exp-job {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 12px;
+  line-height: 1.3;
+}
+
+.exp-job a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* Bullet list styling for responsibilities */
+.exp-details ul {
+  margin: 0;
+  padding-left: 1rem;
+  list-style: disc;
+  line-height: 1.5;
+}
+
+/* Horizontal divider between entries; aligned with the start of the text column */
+.exp-divider {
+  border-top: 1px solid #D2C6A0;
+  margin-left: 144px; /* aligns with 120px logo + 24px gap */
+}
