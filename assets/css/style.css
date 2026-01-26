@@ -27,24 +27,35 @@ body{
 a{color:inherit; text-decoration:none}
 .container{max-width:var(--max); margin:0 auto; padding:0 18px}
 
-.nav{
-  position:sticky; top:0;
-  background: rgba(11,13,18,.72);
-  backdrop-filter: blur(10px);
-  border-bottom:1px solid var(--line);
-  z-index:10;
+.nav {
+  width: 100%;
+  padding: 32px 0;           
+  position: absolute;        /* overlays hero */
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: transparent;   
 }
-.nav .container{
-  display:flex; align-items:center; justify-content:space-between;
-  padding:14px 18px;
+
+.nav .container {
+  max-width: 1200px;   /* or 1400px */
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.brand{font-weight:800; letter-spacing:.2px}
+
+.brand {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
 .links a {
-  margin-left: 14px;
-  color: var(--muted);
-  position: relative;
-  transition: color 0.2s ease;
+  font-size: 1rem;
+  margin-left: 24px;
 }
+
 
 .links a:hover {
   color: var(--text);
@@ -233,6 +244,7 @@ a{color:inherit; text-decoration:none}
 
 /* ================= HERO ================= */
 .hero-section {
+  padding-top: 120px;
   position: relative;
   width: 100%;
   height: 95vh; /* near full screen */
