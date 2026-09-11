@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Academic Projects — Ricardo Castro</title>
+<meta name="description" content="Design and leadership work carried out through CMU-affiliated projects and organizations, outside of coursework: Rethink the Rink, Greek Sing Sets, and Spring Carnival Booth.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../nav.css">
+<link rel="stylesheet" href="../subpage.css">
+</head>
+<body>
+<script>window.NAV_BASE = "../";</script>
+<div id="site-nav"></div>
+
+<!-- ============================================================= -->
+<!--  EDIT ZONE                                                    -->
+<!-- ============================================================= -->
+<script>
+const PAGE = {
+
+  classLabel: "Academic Projects",
+  title: "Academic Projects",
+  subtitle: "Design and leadership work carried out through CMU-affiliated projects and organizations, outside of coursework.",
+  meta: [
+    { label: "Scope",  value: "Sponsored design, campus leadership" },
+    { label: "School", value: "Carnegie Mellon University" }
+  ],
+
+  projects: [
+    {
+      id: "rethink-the-rink",
+      title: "Rethink the Rink",
+      meta: "CMU × Covestro × Pittsburgh Penguins · 2024 & 2025",
+      body: "Led material ideation, CAD modeling, and prototyping across two consecutive Covestro-sponsored safety challenges, developing protective glove and neck guard systems in collaboration with Covestro engineers and the Pittsburgh Penguins. The work centered on layered material configurations that absorb and disperse collision energy without sacrificing the range of motion players actually need — findings presented directly to industry sponsors both years.",
+      spec: { value: "2 awards", label: "Most Innovative Design 2024 · Team MVP 2025" },
+      stack: ["Material selection", "Prototyping", "SolidWorks", "Impact testing"],
+      hero: { type: "image", src: "../media/rink.png", note: "Prototype photo, or a team photo from the sponsor presentation. Awards make this one worth showing." }
+    },
+    {
+      id: "greek-sing-sets",
+      title: "Greek Sing Sets",
+      meta: "Phi Delta Theta, CMU · Aug 2024 – Present · Sets Chair",
+      body: "Designed a 20' × 12' modular stage set in SolidWorks with platforms, doors, and moving elements, then led over 200 fabrication hours and a 30-person build crew to bring it from CAD to a working stage.",
+      spec: null,
+      stack: ["SolidWorks", "Modular set design", "Crew leadership", "Fabrication"],
+      hero: { type: "image", src: "../media/greek-sing.png", note: "Photo of the built set on stage, or the crew mid-build." }
+    },
+    {
+      id: "booth-committee",
+      title: "Spring Carnival Booth",
+      meta: "CMU Spring Carnival · Booth Committee",
+      body: "Hands-on building, decorating, and troubleshooting attachment points on the committee's Spring Carnival booth — reading and working from technical drawings rather than driving the structural engineering itself.",
+      spec: null,
+      stack: ["Fabrication", "Technical drawing reading", "Attachment/assembly troubleshooting"],
+      hero: { type: "image", src: "../media/booth.png", note: "Photo of the booth structure or the build crew at work." }
+    }
+  ],
+
+  backHref: "../index.html",
+  backLabel: "← Back to site"
+};
+</script>
+
+<!-- ============================================================= -->
+<!--  STOP.                                                        -->
+<!-- ============================================================= -->
+
+<div class="wrap">
+  <div class="top"><a class="back" href="" id="j-back-top"></a></div>
+  <header class="hero">
+    <div class="eyebrow" id="j-category"></div>
+    <h1 id="j-title"></h1>
+    <p class="hero-sub" id="j-sub"></p>
+    <div class="metablock" id="j-meta"></div>
+  </header>
+  <main id="j-projects"></main>
+  <footer>
+    <a class="foot-back" href="" id="j-back-foot"></a>
+    <span class="eyebrow">Ricardo Castro</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  const esc = s => String(s == null ? "" : s);
+  const $ = id => document.getElementById(id);
+  document.title = PAGE.title + " — Ricardo Castro";
+  $("j-category").textContent = PAGE.classLabel;
+  $("j-title").textContent = PAGE.title;
+  $("j-sub").textContent = PAGE.subtitle;
+  $("j-back-top").href = PAGE.backHref;
+  $("j-back-top").textContent = PAGE.backLabel;
+  $("j-back-foot").href = PAGE.backHref;
+  $("j-back-foot").textContent = PAGE.backLabel;
+  $("j-meta").innerHTML = PAGE.meta.map(m =>
+    `<div class="mb-cell"><span class="mb-label">${esc(m.label)}</span><span class="mb-value">${esc(m.value)}</span></div>`
+  ).join("");
+
+  function mediaHTML(m){
+    if(!m || m.type === "empty"){
+      return `<div class="frame frame-inline"><div class="frame-empty">
+        <span class="fe-tag">Media slot — empty</span>
+        <span class="fe-note">${esc(m ? m.note : "")}</span>
+        <span class="fe-path">${esc(m ? m.src : "")}</span>
+      </div></div>`;
+    }
+    if(m.type === "video"){
+      return `<div class="frame frame-inline"><video src="${esc(m.src)}" autoplay muted loop playsinline></video></div>`;
+    }
+    return `<div class="frame frame-inline"><img src="${esc(m.src)}" alt="" loading="lazy"></div>`;
+  }
+
+  $("j-projects").innerHTML = PAGE.projects.map(p => `
+    <section class="proj-block" id="${esc(p.id)}">
+      <h2>${esc(p.title)}</h2>
+      <p class="proj-meta-line">${esc(p.meta)}</p>
+      <p class="proj-body">${esc(p.body)}</p>
+      ${p.spec ? `<div class="stack-row"><div class="stack-key">${esc(p.spec.label)}</div><div class="stack-val">${esc(p.spec.value)}</div></div>` : ""}
+      ${mediaHTML(p.hero)}
+      <div class="stack-row"><div class="stack-key">Stack</div><div class="stack-val">${p.stack.map(esc).join(" · ")}</div></div>
+    </section>
+  `).join("");
+})();
+</script>
+
+<script src="../nav.js"></script>
+
+</body>
+</html>

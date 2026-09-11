@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI/ML for Modern Manufacturing (24-641) — Ricardo Castro</title>
+<meta name="description" content="Class project work from CMU 24-641 AI/ML for Modern Manufacturing — defect detection, machining cost estimation, and a text-to-CAD workflow.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../nav.css">
+<link rel="stylesheet" href="../subpage.css">
+</head>
+<body>
+<script>window.NAV_BASE = "../";</script>
+<div id="site-nav"></div>
+
+<!-- ============================================================= -->
+<!--  EDIT ZONE                                                    -->
+<!-- ============================================================= -->
+<script>
+const PAGE = {
+
+  classLabel: "Class Projects",
+  title: "AI/ML for Modern Manufacturing",
+  classNumber: "24-641",
+  subtitle: "Three group projects from a graduate-level course applying AI/ML tools to manufacturing problems.",
+  meta: [
+    { label: "Course",   value: "24-641 AI/ML for Modern Manufacturing (graduate-level)" },
+    { label: "Level",    value: "Taken as an undergraduate" },
+    { label: "Format",   value: "Three group projects, different teams" },
+    { label: "Timeline", value: "Spring 2026" }
+  ],
+
+  projects: [
+    {
+      title: "Manufacturing Defect Detection with CNNs",
+      meta: "Group 2 — Anushree Sabnis, Chirag Satpathy, Juee Chandrachud, Ricky Castro",
+      body: "Benchmarked YOLOv9 against YOLOv11 on an annotated dataset of 3D-printing defects — stringing, warping, and cracking — then scaled training on the winner and built a full pipeline from camera feed through Python inference to an Arduino LED alert. This one has enough depth to stand on its own — full write-up linked below.",
+      stack: null,
+      readmoreHref: "defect-detection.html",
+      readmoreLabel: "Read the full case study →"
+    },
+    {
+      title: "Machining Strategy & Cost Estimation",
+      meta: "Group 3 — Jesse Barkley, Emmanuel George, Ricky Castro",
+      body: "Built a bottom-up, per-part cost model for CNC-machining an aluminum bracket at a Pittsburgh job shop — material, setup, cycle time, and tooling rolled up from first principles rather than a black-box quote. Benchmarked the model against Toolpath's automated estimate and Xometry's USA and Global marketplace pricing across 1-, 10-, and 100-unit production volumes. The from-scratch estimate landed within 10% of the independent estimator, which is the number that actually validates a cost model built without access to the vendor's internal pricing data.",
+      stack: ["Cost estimation modeling", "CNC process planning", "Toolpath (automated estimator)", "Xometry (marketplace benchmarking)"],
+      readmoreHref: null
+    },
+    {
+      title: "Text-to-CAD Workflow",
+      meta: "Group 3 — Jesse Barkley, Emmanuel George, Ricky Castro",
+      body: "Explored iterative natural-language prompting of Gemini 3.0 Pro to generate parametric OpenSCAD code for a dimensioned corner bracket, then documented which prompting strategies actually drove geometric accuracy — comparing image-anchored but vague prompts against precise, corrective feedback loops. The corrective-feedback approach converged on a spec-matching part in four iterations, turning \"can an LLM do CAD\" into a more useful question: which prompting strategy gets you there fastest.",
+      stack: ["OpenSCAD", "Gemini 3.0 Pro", "Prompt engineering", "Parametric CAD generation"],
+      readmoreHref: null
+    }
+  ],
+
+  backHref: "../index.html",
+  backLabel: "← Back to site"
+};
+</script>
+
+<!-- ============================================================= -->
+<!--  STOP.                                                        -->
+<!-- ============================================================= -->
+
+<div class="wrap">
+  <div class="top"><a class="back" href="" id="j-back-top"></a></div>
+  <header class="hero">
+    <div class="eyebrow" id="j-category"></div>
+    <h1 id="j-title"></h1>
+    <p class="hero-sub" id="j-sub"></p>
+    <div class="metablock" id="j-meta"></div>
+  </header>
+  <main id="j-projects"></main>
+  <footer>
+    <a class="foot-back" href="" id="j-back-foot"></a>
+    <span class="eyebrow">Ricardo Castro</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  const esc = s => String(s == null ? "" : s);
+  const $ = id => document.getElementById(id);
+  document.title = PAGE.title + " (" + PAGE.classNumber + ") — Ricardo Castro";
+  $("j-category").textContent = PAGE.classLabel + " · " + PAGE.classNumber;
+  $("j-title").textContent = PAGE.title;
+  $("j-sub").textContent = PAGE.subtitle;
+  $("j-back-top").href = PAGE.backHref;
+  $("j-back-top").textContent = PAGE.backLabel;
+  $("j-back-foot").href = PAGE.backHref;
+  $("j-back-foot").textContent = PAGE.backLabel;
+  $("j-meta").innerHTML = PAGE.meta.map(m =>
+    `<div class="mb-cell"><span class="mb-label">${esc(m.label)}</span><span class="mb-value">${esc(m.value)}</span></div>`
+  ).join("");
+
+  $("j-projects").innerHTML = PAGE.projects.map(p => `
+    <section class="proj-block" id="${esc(p.title.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,''))}">
+      <h2>${esc(p.title)}</h2>
+      <p class="proj-meta-line">${esc(p.meta)}</p>
+      <p class="proj-body">${esc(p.body)}</p>
+      ${p.stack ? `<div class="stack">
+        <div class="stack-row"><div class="stack-key">Stack</div><div class="stack-val">${p.stack.map(esc).join(" · ")}</div></div>
+      </div>` : ""}
+      ${p.readmoreHref ? `<a class="readmore" href="${esc(p.readmoreHref)}">${esc(p.readmoreLabel)}</a>` : ""}
+    </section>
+  `).join("");
+})();
+</script>
+
+<script src="../nav.js"></script>
+
+</body>
+</html>

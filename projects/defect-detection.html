@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Real-Time Defect Detection — Ricardo Castro</title>
+<meta name="description" content="YOLOv11 vision pipeline for detecting 3D-print defects in real time, with hardware alerting via Arduino. Class project, CMU 24-641.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../nav.css">
+<link rel="stylesheet" href="../subpage.css">
+</head>
+<body>
+<script>window.NAV_BASE = "../";</script>
+<div id="site-nav"></div>
+
+<!-- ============================================================= -->
+<!--  EDIT ZONE — swap media filenames, tweak the text.            -->
+<!-- ============================================================= -->
+<script>
+const PAGE = {
+
+  category: "Vision & Manufacturing",
+  title: "Real-Time Defect Detection",
+  subtitle: "A camera watches the print. An LED tells you the moment it fails.",
+  meta: [
+    { label: "Course",   value: "24-641 AI/ML for Modern Manufacturing (graduate-level)" },
+    { label: "Team",     value: "Group 2 — Anushree Sabnis, Chirag Satpathy, Juee Chandrachud, Ricky Castro" },
+    { label: "Client",   value: "3DAM Tech (General Aerospace Inc., project brief)" },
+    { label: "Timeline", value: "Spring 2026" }
+  ],
+
+  hero: {
+    type: "empty",
+    src: "../media/defect-detection.png",
+    poster: "",
+    note: "Best hero: an annotated frame from the live camera showing YOLOv11's bounding boxes on real 3D-printed defects. You already have these images in the project report."
+  },
+
+  sections: [
+
+    {
+      heading: "Context",
+      body: "The design brief came from 3DAM Tech, an additive-manufacturing operation with a 12% defect rate on outgoing parts and a manual inspection process that couldn't keep up. The industry-wide push toward automated visual QC is well documented; the practical problem is that most defect-detection work stays in Jupyter notebooks and never lands on a machine. Our target was a system that runs on hardware a shop floor would actually use — not a lab GPU.",
+      media: null
+    },
+
+    {
+      heading: "Constraints",
+      body: "Edge-deployable inference — no cloud round-trip, no rack GPU. Real-time enough to act on a print before the next layer lands. Three defect classes with wildly different visual signatures (stringing is thin and linear, warping is broad and geometric, cracking is fine and localized). And a limited annotated dataset: 665 images total across the three classes, sourced from Roboflow, which is small by object-detection standards and forced hard choices about which architecture and hyperparameters could learn from that data.",
+      media: null
+    },
+
+    {
+      heading: "Approach",
+      body: "Benchmarked YOLOv9 against YOLOv11 head-to-head under matched training conditions (batch size, learning rate, 15 epochs) so the model comparison was clean. Then scaled the winner: YOLOv11 at batch 32, learning rate 0.002, for 300 epochs. On the hardware side, wired a Python inference loop to an Arduino Uno over serial — the model writes a per-frame TRUE/FALSE to a text file, a bridge process reads it and sends a binary signal to pin 13, which drives an LED. Validated the whole pipeline against real printed parts (not just held-out dataset images), which is where any dataset-only model tends to fall apart.",
+      media: {
+        type: "empty",
+        src: "../media/defect-training-curves.png",
+        caption: "YOLOv9 vs YOLOv11 training curves — mAP, loss components, precision/recall.",
+        note: "Pull one of the training-curve comparison plots from the report. The mAP progression is the most informative single chart."
+      }
+    },
+
+    {
+      heading: "Results",
+      body: "YOLOv11 won on inference speed at parity accuracy: 0.6 ms per frame versus 0.7 ms for YOLOv9, a 14% gain that matters specifically because the deployment target is edge hardware, not a benchmark. Extended training pushed the model to 0.147 mAP50 — modest in absolute terms and honest about it, but a defensible ceiling given the 665-image dataset and the visual similarity between some defect classes. The end-to-end pipeline (camera → Python inference → Arduino → LED) fired correctly on real defective prints, demonstrating the loop from optical signal to physical alert.",
+      media: {
+        type: "empty",
+        src: "../media/defect-hardware.jpg",
+        caption: "The Arduino alert rig — LED triggers on positive detection.",
+        note: "Photo of the actual Arduino Uno with LED wired to pin 13, ideally lit up during a detection. Even a phone shot works if it's clear."
+      }
+    }
+
+  ],
+
+  stack: {
+    "Computer Vision": ["YOLOv11", "YOLOv9 (benchmark)", "Roboflow (dataset)"],
+    "Training":        ["Ultralytics", "NVIDIA RTX A6000", "300 epochs, batch 32"],
+    "Deployment":      ["Python inference loop", "Serial bridge", "Arduino Uno + LED"],
+    "Validation":      ["Held-out test split", "Real printed-part evaluation"]
+  },
+
+  takeaway: "The dataset was the ceiling, not the model choice. YOLOv9 vs YOLOv11 was a real comparison worth running, but with 665 images across three visually distinct defect classes, no architecture was going to hit deployment-grade accuracy. The part of this project worth defending in an interview isn't the mAP number — it's that we built and validated the full pipeline end to end, on real parts, with the loop closed all the way to a physical alert. That's the thing most academic CV projects skip.",
+
+  links: [
+    // Add report or GitHub link here if you have one public
+  ],
+
+  backHref: "ai-ml-manufacturing.html",
+  backLabel: "← AI/ML for Modern Manufacturing"
+};
+</script>
+
+<!-- ============================================================= -->
+<!--  STOP.                                                        -->
+<!-- ============================================================= -->
+
+<div class="wrap">
+  <div class="top"><a class="back" href="" id="j-back-top"></a></div>
+  <header class="hero">
+    <div class="eyebrow" id="j-category"></div>
+    <h1 id="j-title"></h1>
+    <p class="hero-sub" id="j-sub"></p>
+    <div class="metablock" id="j-meta"></div>
+    <div id="j-hero"></div>
+  </header>
+  <main id="j-sections"></main>
+  <section class="sec">
+    <div class="sec-head"><h2>Stack</h2><span class="line"></span></div>
+    <div class="stack" id="j-stack"></div>
+  </section>
+  <section class="sec">
+    <div class="sec-head"><h2>Takeaway</h2><span class="line"></span></div>
+    <div class="takeaway">
+      <span class="takeaway-label">In one paragraph</span>
+      <p id="j-takeaway"></p>
+    </div>
+    <ul class="linksout" id="j-linksout"></ul>
+  </section>
+  <footer>
+    <a class="foot-back" href="" id="j-back-foot"></a>
+    <span class="eyebrow">Ricardo Castro</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  const esc = s => String(s == null ? "" : s);
+  const $ = id => document.getElementById(id);
+  document.title = PAGE.title + " — Ricardo Castro";
+  $("j-category").textContent = PAGE.category;
+  $("j-title").textContent = PAGE.title;
+  $("j-sub").textContent = PAGE.subtitle;
+  $("j-takeaway").textContent = PAGE.takeaway;
+  $("j-back-top").href = PAGE.backHref;
+  $("j-back-top").textContent = PAGE.backLabel;
+  $("j-back-foot").href = PAGE.backHref;
+  $("j-back-foot").textContent = PAGE.backLabel;
+  $("j-meta").innerHTML = PAGE.meta.map(m =>
+    `<div class="mb-cell"><span class="mb-label">${esc(m.label)}</span><span class="mb-value">${esc(m.value)}</span></div>`
+  ).join("");
+  function mediaHTML(m, klass){
+    const cls = "frame " + klass;
+    if(!m || m.type === "empty"){
+      return `<div class="${cls}"><div class="frame-empty">
+        <span class="fe-tag">Media slot — empty</span>
+        <span class="fe-note">${esc(m ? m.note : "")}</span>
+        <span class="fe-path">${esc(m ? m.src : "")}</span>
+      </div></div>`;
+    }
+    if(m.type === "video"){
+      return `<div class="${cls}"><video src="${esc(m.src)}" ${m.poster ? `poster="${esc(m.poster)}"` : ""} autoplay muted loop playsinline></video></div>`;
+    }
+    return `<div class="${cls}"><img src="${esc(m.src)}" alt="" loading="lazy"></div>`;
+  }
+  $("j-hero").innerHTML = mediaHTML(PAGE.hero, "frame-hero");
+  $("j-sections").innerHTML = PAGE.sections.map(s => `
+    <section class="sec">
+      <div class="sec-head"><h2>${esc(s.heading)}</h2><span class="line"></span></div>
+      <p>${esc(s.body)}</p>
+      ${s.media ? mediaHTML(s.media, "frame-inline") + (s.media.caption ? `<p class="caption">${esc(s.media.caption)}</p>` : "") : ""}
+    </section>
+  `).join("");
+  $("j-stack").innerHTML = Object.entries(PAGE.stack).map(([k, arr]) => `
+    <div class="stack-row">
+      <div class="stack-key">${esc(k)}</div>
+      <div class="stack-val">${arr.map(esc).join(" · ")}</div>
+    </div>
+  `).join("");
+  $("j-linksout").innerHTML = (PAGE.links || []).map(l =>
+    `<li><a href="${esc(l.href)}">${esc(l.label)}</a></li>`
+  ).join("");
+})();
+</script>
+
+<script src="../nav.js"></script>
+
+</body>
+</html>

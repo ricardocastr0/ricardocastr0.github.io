@@ -1,72 +1,372 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ricardo Castro</title>
-  <!-- Updated stylesheet path to correctly reference assets -->
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ricky Castro — Mechanical Engineering &amp; Robotics</title>
+<meta name="description" content="Portfolio of Ricky Castro — mechanical engineering and robotics at Carnegie Mellon. Legged locomotion, controls, mechatronic design, and manufacturing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="nav.css">
 </head>
 <body>
-  <!-- Site header is included via JavaScript -->
-  <div id="site-header"></div>
+<script>window.NAV_BASE = "";</script>
+<div id="site-nav"></div>
 
-  <!-- Removed the `container` class from <main> so the hero section can span the full width -->
-  <main>
-    <section id="hero" class="hero-section">
-      <!-- The overlay remains in the DOM but its background is transparent via CSS -->
-      <div class="hero-overlay"></div>
+<!-- ============================================================= -->
+<!--  EDIT ZONE — everything you'll ever change lives below.       -->
+<!--  Change text, swap media filenames, add or remove rows.       -->
+<!--  Do not touch anything past the "STOP" marker further down.   -->
+<!-- ============================================================= -->
+<script>
+const SITE = {
 
-      <!-- Removed extra `container` class to prevent width restriction -->
-      <div class="hero-content">
-        <h1>Ricardo Castro</h1>
-        <p class="hero-subtitle">
-          Mechanical Engineer focused on Robotics, Control, and Manufacturing.
-        </p>
-        <div class="hero-buttons">
-          <a href="/projects.html" class="btn primary">View Projects</a>
-          <a href="/experience.html" class="btn">Experience</a>
+  /* ---------- HEADER ---------- */
+  name: "Ricardo Castro",
+
+  titleBlock: [
+    { label: "Discipline",  value: "Mechanical Engineering, BS / MS" },
+    { label: "Institution", value: "Carnegie Mellon University" },
+    { label: "Focus",       value: "Legged Robotics · Controls" },
+    { label: "Graduating",  value: "May 2027" }
+  ],
+
+  thesis: "I build legged robots, wearable mechanisms, and the control policies that drive them. Most of my work runs the full loop: dynamics in simulation, then carbon fiber and printed parts on the bench, then whatever the hardware teaches you that the simulation didn't.",
+
+  links: [
+    { label: "Résumé (PDF)", href: "resume.pdf" },
+    { label: "GitHub",       href: "https://github.com/ricardocastr0" },
+    { label: "LinkedIn",     href: "https://www.linkedin.com/in/ricky-castro/" },
+    { label: "Email",        href: "mailto:rickycastro2023@gmail.com" }
+  ],
+
+  /* ---------- ABOUT ---------- */
+  about: {
+    body: "I'm an integrated BS/MS Mechanical Engineering student at Carnegie Mellon, graduating May 2027, focused on legged robotics and control theory. Most projects run the same loop — design in Onshape or Fusion, simulate in MuJoCo or run an FEA pass, then rebuild whatever the hardware reveals that the simulation didn't. Outside the lab, I serve as Vice President of CMU's ASME chapter and lead set design for Greek Sing. Bilingual in English and Spanish."
+  },
+
+  /* ---------- EXPERIENCE ----------
+     The Robomechanics Lab row is featured — it's the one with a full
+     case-study subpage (Bigfoot). Add `href` to any other row once it
+     has somewhere to link to.
+  ------------------------------------------------------------------ */
+  experience: [
+    { role: "Robotics Research Assistant", org: "Robomechanics Lab, CMU", date: "Apr 2025 – Present", note: "Legged locomotion — scaling, simulation, and hardware bring-up on Bigfoot, a human-scale bipedal platform.", href: "projects/bigfoot.html", featured: true },
+    { role: "Automation Intern",           org: "Nucor",                     date: "May – Aug 2026",   note: "Signal processing and regression modeling for industrial condition monitoring; .NET application development; structural simulation of mill equipment." },
+    { role: "Mechanical Design Intern",    org: "Origami Robotics",          date: "Aug 2025 – Jan 2026", note: "Teleoperation hardware and parametric mechanism design — a glove controller mapping proportional hand motion onto a servo-driven hand." },
+    { role: "Research Assistant",          org: "NeuroMechatronics Lab, CMU", date: "Dec 2024 – May 2025", note: "Designed and fabricated a fiber-reinforced printed wrist module for a hand exoskeleton targeting finger mobility rehabilitation." },
+    { role: "Teaching Assistant / Grader", org: "CMU Mechanical Engineering", date: "2024 – Present",  note: "24-311 Numerical Methods · 24-352 Dynamic Systems &amp; Controls · 24-215 Smart Furniture · 24-101 Intro to ME." },
+    { role: "Manufacturing Intern",        org: "Manufacturing Futures Institute, CMU", date: "May – Aug 2024", note: "Programmed MIG and laser welding workflows on the Lincoln Electric Classmate Laser via FANUC controller; designed a 30° tiltable modular fixturing table, machined on HAAS CNC and waterjet." }
+  ],
+
+  /* ---------- LEADERSHIP ---------- */
+  leadership: [
+    { role: "Vice President (previously Treasurer)", org: "ASME, CMU Chapter", date: "2024 – Present", note: "Focus on club culture and Pittsburgh community connection." },
+    { role: "Sets Chair", org: "Greek Sing, Phi Delta Theta, CMU", date: "Aug 2024 – Present", note: "Designed a 20' × 12' modular stage set in SolidWorks with platforms, doors, and moving elements; led 200+ fabrication hours and a 30-person build crew.", href: "projects/academic-projects.html#greek-sing-sets" },
+    { role: "Booth Committee Member", org: "Spring Carnival, CMU", date: "", note: "Hands-on building, decorating, and troubleshooting attachment points; reading technical drawings.", href: "projects/academic-projects.html#booth-committee" }
+  ],
+
+  /* ---------- PROJECT HUBS ----------
+     The big project write-ups now live on their own pages, grouped by
+     what they have in common. This section just points to them.
+  ------------------------------------------------------------------ */
+  hubs: [
+    {
+      title: "Bigfoot",
+      eyebrow: "Flagship — Legged Locomotion",
+      body: "A human-scale bipedal platform in the Robomechanics Lab — scaling a miniature biped up to human size without losing the gait.",
+      links: [ { label: "Read the case study →", href: "projects/bigfoot.html" } ]
+    },
+    {
+      title: "Academic Projects",
+      eyebrow: "Lab, sponsored, and campus work",
+      body: "Design and leadership work carried out through CMU-affiliated projects and organizations, outside of coursework.",
+      links: [
+        { label: "Rethink the Rink",    href: "projects/academic-projects.html#rethink-the-rink" },
+        { label: "Greek Sing Sets",     href: "projects/academic-projects.html#greek-sing-sets" },
+        { label: "Booth Committee",     href: "projects/academic-projects.html#booth-committee" }
+      ]
+    },
+    {
+      title: "Class Projects",
+      eyebrow: "Coursework, grouped by class",
+      body: "Project work from CMU Mechanical Engineering coursework, organized by the class it came from.",
+      links: [
+        { label: "AI/ML for Modern Manufacturing (24-641)", href: "projects/ai-ml-manufacturing.html" },
+        { label: "Intro to CAD/CAE Tools (24-688)",         href: "projects/intro-cad-cae.html" },
+        { label: "Mechanical Design: Methods and Applications (24-370)", href: "projects/mechanical-design.html" }
+      ]
+    }
+  ],
+
+  /* ---------- CAPABILITIES ---------- */
+  capabilities: [
+    { group: "Design & Simulation", items: "SolidWorks · Onshape · Fusion 360 · AutoCAD · ANSYS (FEA) · MuJoCo · Gazebo · GD&amp;T · Technical drawings · DFM/DFAM" },
+    { group: "Programming",         items: "Python · C++ · MATLAB · Simulink · C# / .NET" },
+    { group: "Fabrication",         items: "CNC machining · Manual mill &amp; lathe · MIG &amp; laser welding · Laser and waterjet cutting · 3D printing · Carbon fiber layup" },
+    { group: "Languages",           items: "English (native) · Spanish (fluent)" }
+  ],
+
+  /* ---------- CONTACT ---------- */
+  contact: {
+    body: "Best reached by email — happy to talk about robotics, mechanical design, or anything on this site in more depth."
+  },
+
+  footerNote: "Built and maintained by hand. Last revised September 2026."
+};
+</script>
+
+<!-- ============================================================= -->
+<!--  STOP. Nothing below this line needs to change.               -->
+<!-- ============================================================= -->
+
+<style>
+:root{
+  --paper:#E6EAEC;
+  --paper-2:#DCE1E4;
+  --ink:#15181B;
+  --ink-2:#4A5257;
+  --rule:#A9B3B9;
+  --blue:#1B4FD1;
+  --stress:#D93B16;
+  --card:#F2F4F5;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans",system-ui,-apple-system,sans-serif;
+  font-size:17px;
+  line-height:1.62;
+  background-image:linear-gradient(var(--paper-2) 1px,transparent 1px),linear-gradient(90deg,var(--paper-2) 1px,transparent 1px);
+  background-size:28px 28px;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+a{color:inherit}
+:focus-visible{outline:2.5px solid var(--blue);outline-offset:3px}
+
+.eyebrow{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11.5px;font-weight:500;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-2);
+}
+
+/* ---- hero ---- */
+.hero{padding:56px 0 40px}
+.hero-name{
+  font-family:"Archivo",system-ui,sans-serif;
+  font-variation-settings:"wdth" 112,"wght" 800;
+  font-weight:800;
+  font-size:clamp(48px,11.5vw,116px);
+  line-height:.9;letter-spacing:-.03em;
+  margin:14px 0 0;text-transform:uppercase;
+}
+.hero-rule{height:2px;background:var(--ink);margin:26px 0 0}
+.titleblock{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border:1px solid var(--rule);border-top:none;
+}
+.tb-cell{padding:11px 13px;border-right:1px solid var(--rule);min-width:0}
+.tb-cell:last-child{border-right:none}
+.tb-label{
+  font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-2);display:block;margin-bottom:3px;
+}
+.tb-value{font-size:14px;font-weight:500;line-height:1.35}
+.thesis{
+  max-width:60ch;margin:34px 0 0;font-size:clamp(18px,2.3vw,21px);
+  line-height:1.55;color:var(--ink);
+}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0 0;padding:0;list-style:none}
+.links a{
+  display:inline-block;padding:9px 16px;border:1.5px solid var(--ink);
+  font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.06em;
+  text-transform:uppercase;text-decoration:none;background:transparent;
+  transition:background .16s ease,color .16s ease;
+}
+.links a:hover{background:var(--ink);color:var(--paper)}
+
+/* ---- section heads ---- */
+.sec{padding:56px 0 0;scroll-margin-top:24px}
+.sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:30px}
+.sec-head h2{
+  font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 108,"wght" 700;
+  font-size:clamp(22px,3.4vw,30px);margin:0;letter-spacing:-.01em;text-transform:uppercase;
+}
+.sec-head .line{flex:1;height:1px;background:var(--rule)}
+.sec-intro{max-width:70ch;font-size:16.5px;color:var(--ink);margin:-12px 0 26px}
+
+/* ---- about / contact ---- */
+.prose{max-width:68ch;font-size:16.5px;line-height:1.65;margin:0}
+
+/* ---- experience / leadership rows ---- */
+.exp{display:flex;flex-direction:column;gap:0}
+.exp-row{
+  display:grid;grid-template-columns:280px 1fr;gap:24px;
+  padding:18px 0;border-bottom:1px solid var(--rule);
+}
+.exp-row:first-child{border-top:1px solid var(--rule)}
+.exp-role{margin:0;font-weight:600;font-size:15.5px}
+.exp-org{margin:2px 0 0;font-size:13.5px;color:var(--ink-2)}
+.exp-note{margin:0;font-size:15px;color:var(--ink)}
+.exp-row.featured{background:var(--card)}
+.exp-row.featured .exp-role{color:var(--stress)}
+.exp-link{
+  display:inline-block;margin-top:8px;font-family:"IBM Plex Mono",monospace;
+  font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;
+  text-decoration:none;color:var(--stress);
+}
+.exp-link:hover{text-decoration:underline}
+
+/* ---- project hubs ---- */
+.hubs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.hub{border:1px solid var(--rule);background:var(--card);padding:24px}
+.hub h3{
+  font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 108,"wght" 700;
+  font-size:20px;margin:10px 0 10px;letter-spacing:-.01em;text-transform:uppercase;
+}
+.hub p{margin:0 0 16px;font-size:14.5px;color:var(--ink-2);line-height:1.55}
+.hub-links{display:flex;flex-direction:column;gap:8px;list-style:none;margin:0;padding:0}
+.hub-links a{
+  font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.03em;
+  text-decoration:none;color:var(--ink);border-bottom:1px solid var(--rule);
+  padding-bottom:6px;display:block;
+}
+.hub-links a:hover{color:var(--stress);border-color:var(--stress)}
+
+/* ---- capabilities ---- */
+.cap-row{display:grid;grid-template-columns:220px 1fr;gap:24px;padding:14px 0;border-bottom:1px solid var(--rule)}
+.cap-row:first-child{border-top:1px solid var(--rule)}
+.cap-items{margin:0;font-size:15px}
+
+footer{margin-top:64px;border-top:2px solid var(--ink);padding:22px 0 56px}
+.foot-note{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-2);letter-spacing:.02em}
+
+@media (max-width:820px){
+  body{font-size:16px}
+  .titleblock{grid-template-columns:repeat(2,1fr)}
+  .tb-cell{border-bottom:1px solid var(--rule)}
+  .tb-cell:nth-child(2){border-right:none}
+  .tb-cell:nth-child(3),.tb-cell:nth-child(4){border-bottom:none}
+  .tb-cell:nth-child(4){border-right:none}
+  .exp-row{grid-template-columns:1fr;gap:6px}
+  .cap-row{grid-template-columns:1fr;gap:6px}
+  .hubs{grid-template-columns:1fr}
+  .hero{padding:44px 0 30px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+}
+</style>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow" id="j-eyebrow"></div>
+    <h1 class="hero-name" id="j-name"></h1>
+    <div class="hero-rule"></div>
+    <div class="titleblock" id="j-titleblock"></div>
+    <p class="thesis" id="j-thesis"></p>
+    <ul class="links" id="j-links"></ul>
+  </header>
+
+  <section class="sec" id="about">
+    <div class="sec-head"><h2>About</h2><span class="line"></span></div>
+    <p class="prose" id="j-about"></p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><h2>Experience</h2><span class="line"></span></div>
+    <div class="exp" id="j-exp"></div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><h2>Leadership</h2><span class="line"></span></div>
+    <div class="exp" id="j-lead"></div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><h2>Projects</h2><span class="line"></span></div>
+    <div class="hubs" id="j-hubs"></div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><h2>Capabilities</h2><span class="line"></span></div>
+    <div id="j-cap"></div>
+  </section>
+
+  <section class="sec" id="contact">
+    <div class="sec-head"><h2>Contact</h2><span class="line"></span></div>
+    <p class="prose" id="j-contact"></p>
+    <ul class="links" id="j-links-2"></ul>
+  </section>
+
+  <footer>
+    <div class="foot-note" id="j-foot"></div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  const esc = s => String(s == null ? "" : s);
+  const $ = id => document.getElementById(id);
+
+  document.title = SITE.name + " — Mechanical Engineering & Robotics";
+  $("j-eyebrow").textContent = "Portfolio";
+  $("j-name").textContent = SITE.name;
+  $("j-thesis").textContent = SITE.thesis;
+  $("j-about").textContent = SITE.about.body;
+  $("j-contact").textContent = SITE.contact.body;
+  $("j-foot").textContent = SITE.footerNote;
+
+  $("j-titleblock").innerHTML = SITE.titleBlock.map(c =>
+    `<div class="tb-cell"><span class="tb-label">${esc(c.label)}</span><span class="tb-value">${esc(c.value)}</span></div>`
+  ).join("");
+
+  const linksHTML = SITE.links.map(l => `<li><a href="${esc(l.href)}">${esc(l.label)}</a></li>`).join("");
+  $("j-links").innerHTML = linksHTML;
+  $("j-links-2").innerHTML = linksHTML;
+
+  function rowsHTML(rows){
+    return rows.map(e => `
+      <div class="exp-row${e.featured ? " featured" : ""}">
+        <div>
+          <p class="exp-role">${esc(e.role)}</p>
+          <p class="exp-org">${esc(e.org)}${e.date ? " · " + esc(e.date) : ""}</p>
+        </div>
+        <div>
+          <p class="exp-note">${esc(e.note)}</p>
+          ${e.href ? `<a class="exp-link" href="${esc(e.href)}">${e.featured ? "Read the full case study →" : "More →"}</a>` : ""}
         </div>
       </div>
-    </section>
+    `).join("");
+  }
+  $("j-exp").innerHTML = rowsHTML(SITE.experience);
+  $("j-lead").innerHTML = rowsHTML(SITE.leadership);
 
-    <section id="about" class="about-section">
-      <div class="about-container">
-        <div class="about-image">
-          <img src="/assets/images/profile.jpg" alt="Photo of Ricardo Castro" />
-        </div>
-        <div class="about-content">
-          <h2>Building things that move, think, and work in the real world</h2>
-          <p>
-            I’m a mechanical engineer at Carnegie Mellon University focused on
-            robotics, manufacturing, and control. I enjoy working at the boundary
-            between physical systems and the software that drives them.
-          </p>
-          <p>
-            My work spans research, startups, and hands-on fabrication — from
-            developing robotic control strategies to building mechanisms that
-            survive real-world constraints.
-          </p>
-          <p>
-            I’m especially interested in systems that scale: designs that move
-            cleanly from prototype to production and from simulation to hardware.
-          </p>
-          <div class="about-footer">
-            <a href="mailto:rickycastro2023@gmail.com">Email</a>
-            <span>•</span>
-            <a href="https://www.linkedin.com/in/ricky-castro/" target="_blank">LinkedIn</a>
-            <span>•</span>
-            <a href="https://github.com/ricardocastr0" target="_blank">GitHub</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+  $("j-hubs").innerHTML = SITE.hubs.map(h => `
+    <article class="hub">
+      <div class="eyebrow">${esc(h.eyebrow)}</div>
+      <h3>${esc(h.title)}</h3>
+      <p>${esc(h.body)}</p>
+      <ul class="hub-links">${h.links.map(l => `<li><a href="${esc(l.href)}">${esc(l.label)}</a></li>`).join("")}</ul>
+    </article>
+  `).join("");
 
-  <script src="assets/js/include.js"></script>
+  $("j-cap").innerHTML = SITE.capabilities.map(c => `
+    <div class="cap-row">
+      <div class="eyebrow">${esc(c.group)}</div>
+      <p class="cap-items">${esc(c.items)}</p>
+    </div>
+  `).join("");
+})();
+</script>
+
+<script src="nav.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,62 @@
+/* Relies on the --paper / --paper-2 / --ink / --ink-2 / --rule custom
+   properties already declared in each page's own :root — no need to
+   redeclare them here, this file is just the nav layout. */
+
+.site-nav{
+  border-bottom:1px solid var(--rule);
+  background:var(--paper);
+  position:relative;
+  z-index:40;
+}
+.site-nav-wrap{
+  max-width:1080px;margin:0 auto;padding:16px 24px;
+  display:flex;align-items:center;gap:28px;
+}
+.site-nav-name{
+  font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 108,"wght" 800;
+  font-size:15px;letter-spacing:-.01em;text-transform:uppercase;
+  text-decoration:none;color:var(--ink);margin-right:auto;white-space:nowrap;
+}
+.site-nav-list{
+  display:flex;align-items:center;gap:22px;list-style:none;margin:0;padding:0;
+}
+.nav-link{
+  font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink-2);text-decoration:none;
+  background:none;border:none;cursor:pointer;padding:0;display:inline-flex;align-items:center;gap:4px;
+}
+.nav-link:hover{color:var(--ink)}
+.nav-caret{font-size:9px;position:relative;top:1px}
+.nav-item{position:relative}
+.nav-dropdown{
+  display:none;position:absolute;top:calc(100% + 14px);left:-16px;
+  min-width:230px;background:var(--paper);border:1px solid var(--rule);
+  list-style:none;margin:0;padding:6px 0;box-shadow:0 6px 0 var(--paper-2);
+}
+.nav-toggle[aria-expanded="true"] + .nav-dropdown{
+  display:block;
+}
+.nav-dropdown a{
+  display:block;padding:9px 16px;font-family:"IBM Plex Mono",monospace;font-size:12px;
+  letter-spacing:.04em;text-decoration:none;color:var(--ink);white-space:nowrap;
+}
+.nav-dropdown a:hover{background:var(--paper-2)}
+.site-nav-burger{
+  display:none;background:none;border:1px solid var(--rule);color:var(--ink);
+  font-size:16px;line-height:1;padding:6px 11px;cursor:pointer;
+}
+
+@media (max-width:820px){
+  .site-nav-wrap{flex-wrap:wrap}
+  .site-nav-list{
+    display:none;width:100%;order:3;
+    flex-direction:column;align-items:stretch;gap:0;
+    border-top:1px solid var(--rule);margin-top:14px;padding-top:6px;
+  }
+  .site-nav.nav-open .site-nav-list{display:flex}
+  .nav-item{width:100%}
+  .nav-link{width:100%;padding:12px 2px;justify-content:space-between}
+  .nav-dropdown{position:static;border:none;box-shadow:none;padding:0 0 6px 14px;left:0}
+  .nav-dropdown a{padding:8px 0}
+  .site-nav-burger{display:block}
+}

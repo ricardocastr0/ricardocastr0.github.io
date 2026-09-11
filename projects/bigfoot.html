@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bigfoot — Ricardo Castro</title>
+<meta name="description" content="Bigfoot — a human-scale bipedal platform in Carnegie Mellon's Robomechanics Lab. Scaling, simulation, and hardware bring-up.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../nav.css">
+<link rel="stylesheet" href="../subpage.css">
+</head>
+<body>
+<script>window.NAV_BASE = "../";</script>
+<div id="site-nav"></div>
+
+<!-- ============================================================= -->
+<!--  EDIT ZONE                                                    -->
+<!-- ============================================================= -->
+<script>
+const PAGE = {
+
+  classLabel: "Flagship",
+  classTitle: "Legged Locomotion",
+  classNumber: "Robomechanics Lab",
+  title: "Bigfoot",
+  subtitle: "A human-scale bipedal platform — scaling a miniature biped up to human size without losing the gait.",
+  meta: [
+    { label: "Lab",      value: "Robomechanics Lab, CMU" },
+    { label: "Role",     value: "Robotics Research Assistant" },
+    { label: "Focus",    value: "Scaling, simulation, hardware bring-up" },
+    { label: "Timeline", value: "Apr 2025 – Present" }
+  ],
+
+  hero: {
+    type: "image",
+    src: "../media/bigfoot.jpg",
+    poster: "",
+    note: "Hardware photo from the Robomechanics Lab."
+  },
+
+  sections: [
+    {
+      heading: "Context",
+      body: "Bigfoot is a human-scale bipedal platform in Carnegie Mellon's Robomechanics Lab. The research problem is scaling: taking a gait that works on a miniature biped and carrying it up to human size without losing it. The work sits in the loop the rest of this site is built around — dynamics in simulation, then carbon fiber and printed parts on the bench, then whatever the hardware teaches you that the simulation didn't.",
+      media: null
+    },
+    {
+      heading: "Approach",
+      body: "The work so far has been scaling, simulation, and hardware bring-up. Designs move between CAD and dynamics models (MuJoCo), then onto physical prototypes. Hardware builds and tests are used to transfer simulation-verified designs into parts that actually walk — and to document what has to change when they don't.",
+      media: null
+    }
+  ],
+
+  stack: {
+    "Simulation": ["MuJoCo", "Dynamics modeling"],
+    "Design":     ["CAD", "Mechanism design", "Scaling"],
+    "Hardware":   ["Prototype bring-up", "Carbon fiber", "3D printing"]
+  },
+
+  takeaway: "This page is a placeholder for the full case study. The featured work is ongoing — more write-up and media will land here as hardware results come in.",
+
+  links: [
+    { label: "Robomechanics Lab", href: "https://www.cmu.edu/me/robomechanicslab/" }
+  ],
+
+  backHref: "../index.html",
+  backLabel: "← Back to site"
+};
+</script>
+
+<!-- ============================================================= -->
+<!--  STOP.                                                        -->
+<!-- ============================================================= -->
+
+<div class="wrap">
+  <div class="top"><a class="back" href="" id="j-back-top"></a></div>
+  <header class="hero">
+    <div class="eyebrow" id="j-category"></div>
+    <h1 id="j-title"></h1>
+    <p class="hero-sub" id="j-sub"></p>
+    <div class="metablock" id="j-meta"></div>
+    <div id="j-hero"></div>
+  </header>
+  <main id="j-sections"></main>
+  <section class="sec">
+    <div class="sec-head"><h2>Stack</h2><span class="line"></span></div>
+    <div class="stack" id="j-stack"></div>
+  </section>
+  <section class="sec">
+    <div class="sec-head"><h2>Takeaway</h2><span class="line"></span></div>
+    <div class="takeaway">
+      <span class="takeaway-label">In one paragraph</span>
+      <p id="j-takeaway"></p>
+    </div>
+    <ul class="linksout" id="j-linksout"></ul>
+  </section>
+  <footer>
+    <a class="foot-back" href="" id="j-back-foot"></a>
+    <span class="eyebrow">Ricardo Castro</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  const esc = s => String(s == null ? "" : s);
+  const $ = id => document.getElementById(id);
+  document.title = PAGE.title + " — Ricardo Castro";
+  $("j-category").textContent = PAGE.classLabel + " · " + PAGE.classTitle;
+  $("j-title").textContent = PAGE.title;
+  $("j-sub").textContent = PAGE.subtitle;
+  $("j-takeaway").textContent = PAGE.takeaway;
+  $("j-back-top").href = PAGE.backHref;
+  $("j-back-top").textContent = PAGE.backLabel;
+  $("j-back-foot").href = PAGE.backHref;
+  $("j-back-foot").textContent = PAGE.backLabel;
+  $("j-meta").innerHTML = PAGE.meta.map(m =>
+    `<div class="mb-cell"><span class="mb-label">${esc(m.label)}</span><span class="mb-value">${esc(m.value)}</span></div>`
+  ).join("");
+  function mediaHTML(m, klass){
+    const cls = "frame " + klass;
+    if(!m || m.type === "empty"){
+      return `<div class="${cls}"><div class="frame-empty">
+        <span class="fe-tag">Media slot — empty</span>
+        <span class="fe-note">${esc(m ? m.note : "")}</span>
+        <span class="fe-path">${esc(m ? m.src : "")}</span>
+      </div></div>`;
+    }
+    if(m.type === "video"){
+      return `<div class="${cls}"><video src="${esc(m.src)}" ${m.poster ? `poster="${esc(m.poster)}"` : ""} autoplay muted loop playsinline></video></div>`;
+    }
+    return `<div class="${cls}"><img src="${esc(m.src)}" alt="" loading="lazy"></div>`;
+  }
+  $("j-hero").innerHTML = mediaHTML(PAGE.hero, "frame-hero");
+  $("j-sections").innerHTML = PAGE.sections.map(s => `
+    <section class="sec">
+      <div class="sec-head"><h2>${esc(s.heading)}</h2><span class="line"></span></div>
+      <p>${esc(s.body)}</p>
+      ${s.media ? mediaHTML(s.media, "frame-inline") + (s.media.caption ? `<p class="caption">${esc(s.media.caption)}</p>` : "") : ""}
+    </section>
+  `).join("");
+  $("j-stack").innerHTML = Object.entries(PAGE.stack).map(([k, arr]) => `
+    <div class="stack-row">
+      <div class="stack-key">${esc(k)}</div>
+      <div class="stack-val">${arr.map(esc).join(" · ")}</div>
+    </div>
+  `).join("");
+  $("j-linksout").innerHTML = (PAGE.links || []).map(l =>
+    `<li><a href="${esc(l.href)}">${esc(l.label)}</a></li>`
+  ).join("");
+})();
+</script>
+
+<script src="../nav.js"></script>
+
+</body>
+</html>
