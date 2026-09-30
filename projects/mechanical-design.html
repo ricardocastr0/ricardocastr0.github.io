@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mechanical Design: Methods and Applications (24-370) — Ricardo Castro</title>
-<meta name="description" content="Class project from CMU 24-370 Mechanical Design: Methods and Applications — a motor-controlled, one-handed pair of scissors for accessibility.">
+<title>Mechanical Design: Methods and Applications (24-370) · Ricardo Castro</title>
+<meta name="description" content="Class project from CMU 24-370 Mechanical Design: Methods and Applications · a motor-controlled, one-handed pair of scissors for accessibility.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -20,51 +20,74 @@
 <!-- ============================================================= -->
 <script>
 const PAGE = {
-
-  classLabel: "Class Project",
-  classTitle: "Mechanical Design: Methods and Applications",
-  classNumber: "24-370",
-  title: "Motor-Controlled Scissors",
-  subtitle: "One-handed cutting for people with tendinitis.",
-  meta: [
-    { label: "Course",   value: "24-370 Mechanical Design: Methods and Applications" },
-    { label: "Focus",    value: "Accessibility-driven product design" },
-    { label: "Control",  value: "PID, tuned in MATLAB/Simulink" },
-    { label: "Timeline", value: "TBD" }
-  ],
-
-  hero: {
-    type: "image",
-    src: "../media/scissors.png",
-    poster: "",
-    note: "Photo of the built device, ideally in use. A Simulink step-response plot works as a second image."
-  },
-
-  sections: [
+  "classLabel": "Class Project",
+  "classTitle": "Mechanical Design: Methods and Applications",
+  "classNumber": "24-370",
+  "title": "Motor-Controlled Scissors",
+  "subtitle": "One-handed cutting for people with tendinitis.",
+  "meta": [
     {
-      heading: "Context",
-      body: "An electromechanical scissor system built to reduce joint strain during repetitive cutting, aimed at people with tendinitis. The design problem was as much ergonomic as it was control — accessibility drove the form factor from the start, not something bolted on after the mechanism was decided.",
-      media: null
+      "label": "Course",
+      "value": "24-370 Mechanical Design: Methods and Applications"
     },
     {
-      heading: "Approach",
-      body: "Modeled the cutting system in MATLAB and Simulink to tune PID gains under ramp inputs, then implemented and validated the controller on Arduino. The constraint that shaped the control design was consistent blade closure across varying material loads and user-triggered interruptions mid-cut — the system had to behave predictably even when the person using it changed their mind partway through a cut.",
-      media: null
+      "label": "Focus",
+      "value": "Accessibility-driven product design"
+    },
+    {
+      "label": "Control",
+      "value": "PID, tuned in MATLAB/Simulink"
+    },
+    {
+      "label": "Type",
+      "value": "Course prototype"
     }
   ],
-
-  stack: {
-    "Control":  ["MATLAB", "Simulink", "PID tuning"],
-    "Hardware": ["Arduino"],
-    "Design":   ["Design for accessibility", "Ergonomics"]
+  "hero": {
+    "type": "image",
+    "src": "../media/scissors.png",
+    "poster": "",
+    "note": "Photo of the built device, ideally in use. A Simulink step-response plot works as a second image."
   },
-
-  takeaway: "",
-
-  links: [],
-
-  backHref: "../index.html",
-  backLabel: "← Back to site"
+  "sections": [
+    {
+      "heading": "Context",
+      "body": "A motor-driven scissor prototype designed for one-handed cutting. The goal was to reduce strain during repetitive cutting for people with tendinitis.",
+      "media": null
+    },
+    {
+      "heading": "Approach",
+      "body": "The cutting system was modeled in MATLAB and Simulink to tune PID gains under ramp inputs. The controller was then implemented and tested on Arduino. Design considerations included blade closure under different material loads and interruptions during a cut.",
+      "media": null
+    },
+    {
+      "heading": "Evidence to add",
+      "body": "The test setup, blade-response data, and individual team responsibilities still need to be added.",
+      "media": {
+        "type": "empty",
+        "src": "../media/scissors-response.png",
+        "note": "Controller response · label input, output, units, cutting load, and whether the plot is simulated or measured."
+      }
+    }
+  ],
+  "stack": {
+    "Control": [
+      "MATLAB",
+      "Simulink",
+      "PID tuning"
+    ],
+    "Hardware": [
+      "Arduino"
+    ],
+    "Design": [
+      "Design for accessibility",
+      "Ergonomics"
+    ]
+  },
+  "takeaway": "The project used MATLAB/Simulink modeling and Arduino control to operate a cutting mechanism. Reduced strain was a design goal; a measured ergonomic benefit has not been established.",
+  "links": [],
+  "backHref": "../index.html",
+  "backLabel": "← Back to site"
 };
 </script>
 
@@ -89,7 +112,7 @@ const PAGE = {
   <section class="sec" id="j-takeaway-sec">
     <div class="sec-head"><h2>Takeaway</h2><span class="line"></span></div>
     <div class="takeaway">
-      <span class="takeaway-label">In one paragraph</span>
+
       <p id="j-takeaway"></p>
     </div>
     <ul class="linksout" id="j-linksout"></ul>
@@ -104,7 +127,7 @@ const PAGE = {
 (function(){
   const esc = s => String(s == null ? "" : s);
   const $ = id => document.getElementById(id);
-  document.title = PAGE.classTitle + " (" + PAGE.classNumber + ") — Ricardo Castro";
+  document.title = PAGE.classTitle + " (" + PAGE.classNumber + ") · Ricardo Castro";
   $("j-category").textContent = PAGE.classLabel + " · " + PAGE.classNumber + " " + PAGE.classTitle;
   $("j-title").textContent = PAGE.title;
   $("j-sub").textContent = PAGE.subtitle;
@@ -121,15 +144,15 @@ const PAGE = {
     const cls = "frame " + klass;
     if(!m || m.type === "empty"){
       return `<div class="${cls}"><div class="frame-empty">
-        <span class="fe-tag">Media slot — empty</span>
+        <span class="fe-tag">Media to add</span>
         <span class="fe-note">${esc(m ? m.note : "")}</span>
-        <span class="fe-path">${esc(m ? m.src : "")}</span>
+
       </div></div>`;
     }
     if(m.type === "video"){
-      return `<div class="${cls}"><video src="${esc(m.src)}" ${m.poster ? `poster="${esc(m.poster)}"` : ""} autoplay muted loop playsinline></video></div>`;
+      return `<div class="${cls}"><video src="${esc(m.src)}" ${m.poster ? `poster="${esc(m.poster)}"` : ""} controls playsinline preload="metadata"></video></div>`;
     }
-    return `<div class="${cls}"><img src="${esc(m.src)}" alt="" loading="lazy"></div>`;
+    return `<div class="${cls}"><img src="${esc(m.src)}" alt="${esc(m.alt || m.note || PAGE.title)}" loading="lazy"></div>`;
   }
   $("j-hero").innerHTML = mediaHTML(PAGE.hero, "frame-hero");
   $("j-sections").innerHTML = PAGE.sections.map(s => `

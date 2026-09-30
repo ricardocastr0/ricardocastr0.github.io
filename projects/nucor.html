@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Industrial sensing & diagnostics · Ricardo Castro</title>
+<meta name="description" content="A vibration-anomaly detector and a modular crane-orientation display developed during my Nucor internship.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../nav.css">
+<link rel="stylesheet" href="../subpage.css">
+</head>
+<body>
+<script>window.NAV_BASE = "../";</script>
+<div id="site-nav"></div>
+
+<!-- ============================================================= -->
+<!--  EDIT ZONE                                                    -->
+<!-- ============================================================= -->
+<script>
+const PAGE = {
+  "classLabel": "Industry experience",
+  "classNumber": "",
+  "links": [],
+  "backHref": "../index.html#projects",
+  "backLabel": "← Selected engineering work",
+  "classTitle": "Sensing and diagnostics",
+  "title": "Industrial sensing & diagnostics",
+  "subtitle": "A vibration-anomaly detector and a modular crane-orientation display developed during my Nucor internship.",
+  "meta": [
+    {
+      "label": "Organization",
+      "value": "Nucor"
+    },
+    {
+      "label": "Role",
+      "value": "Automation Intern"
+    },
+    {
+      "label": "Timeline",
+      "value": "May – Aug 2026"
+    },
+    {
+      "label": "Focus",
+      "value": "Signal processing · Embedded sensing"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "Vibration-anomaly detector",
+      "body": "I developed a .NET application that uses signal processing and regression to flag vibration anomalies in industrial equipment."
+    },
+    {
+      "heading": "Crane-orientation display",
+      "body": "I developed a crane-orientation display using an IMU, ESP32-S3, and LCD. The display attaches to the main remote controller through a modular mount."
+    },
+    {
+      "heading": "Validation and project status",
+      "body": "This overview describes my work on the two systems. Test results and deployment status are not included here."
+    }
+  ],
+  "stack": {
+    "Diagnostics": [
+      "C# / .NET",
+      "Signal processing",
+      "Regression"
+    ],
+    "Hardware": [
+      "IMU",
+      "ESP32-S3",
+      "LCD",
+      "Modular remote-controller attachment"
+    ]
+  },
+  "takeaway": "The internship included two different tasks: analyzing vibration data in a desktop application and integrating sensors and a display into a remote-controller attachment."
+};
+</script>
+
+<!-- ============================================================= -->
+<!--  STOP.                                                        -->
+<!-- ============================================================= -->
+
+<div class="wrap">
+  <div class="top"><a class="back" href="" id="j-back-top"></a></div>
+  <header class="hero">
+    <div class="eyebrow" id="j-category"></div>
+    <h1 id="j-title"></h1>
+    <p class="hero-sub" id="j-sub"></p>
+    <div class="metablock" id="j-meta"></div>
+    <p class="caption">Project images are not shared publicly.</p>
+  </header>
+  <main id="j-sections"></main>
+  <section class="sec">
+    <div class="sec-head"><h2>Stack</h2><span class="line"></span></div>
+    <div class="stack" id="j-stack"></div>
+  </section>
+  <section class="sec">
+    <div class="sec-head"><h2>Takeaway</h2><span class="line"></span></div>
+    <div class="takeaway">
+
+      <p id="j-takeaway"></p>
+    </div>
+    <ul class="linksout" id="j-linksout"></ul>
+  </section>
+  <footer>
+    <a class="foot-back" href="" id="j-back-foot"></a>
+    <span class="eyebrow">Ricardo Castro</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  const esc = s => String(s == null ? "" : s);
+  const $ = id => document.getElementById(id);
+  document.title = PAGE.title + " · Ricardo Castro";
+  $("j-category").textContent = PAGE.classLabel + " · " + PAGE.classTitle;
+  $("j-title").textContent = PAGE.title;
+  $("j-sub").textContent = PAGE.subtitle;
+  $("j-takeaway").textContent = PAGE.takeaway;
+  $("j-back-top").href = PAGE.backHref;
+  $("j-back-top").textContent = PAGE.backLabel;
+  $("j-back-foot").href = PAGE.backHref;
+  $("j-back-foot").textContent = PAGE.backLabel;
+  $("j-meta").innerHTML = PAGE.meta.map(m =>
+    `<div class="mb-cell"><span class="mb-label">${esc(m.label)}</span><span class="mb-value">${esc(m.value)}</span></div>`
+  ).join("");
+  $("j-sections").innerHTML = PAGE.sections.map(s => `
+    <section class="sec">
+      <div class="sec-head"><h2>${esc(s.heading)}</h2><span class="line"></span></div>
+      <p>${esc(s.body)}</p>
+    </section>
+  `).join("");
+  $("j-stack").innerHTML = Object.entries(PAGE.stack).map(([k, arr]) => `
+    <div class="stack-row">
+      <div class="stack-key">${esc(k)}</div>
+      <div class="stack-val">${arr.map(esc).join(" · ")}</div>
+    </div>
+  `).join("");
+  $("j-linksout").innerHTML = (PAGE.links || []).map(l =>
+    `<li><a href="${esc(l.href)}">${esc(l.label)}</a></li>`
+  ).join("");
+})();
+</script>
+
+<script src="../nav.js"></script>
+
+</body>
+</html>

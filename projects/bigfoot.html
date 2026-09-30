@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bigfoot — Ricardo Castro</title>
-<meta name="description" content="Bigfoot — a human-scale bipedal platform in Carnegie Mellon's Robomechanics Lab. Scaling, simulation, and hardware bring-up.">
+<title>Bigfoot · Ricardo Castro</title>
+<meta name="description" content="Bigfoot · a 1 m quasi-passive biped designed and built by Ricardo Castro at CMU. Mechanical design, MuJoCo, PD control, CAN actuator integration, and physical walking.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -20,53 +20,113 @@
 <!-- ============================================================= -->
 <script>
 const PAGE = {
-
-  classLabel: "Flagship",
-  classTitle: "Legged Locomotion",
-  classNumber: "Robomechanics Lab",
-  title: "Bigfoot",
-  subtitle: "A human-scale bipedal platform — scaling a miniature biped up to human size without losing the gait.",
-  meta: [
-    { label: "Lab",      value: "Robomechanics Lab, CMU" },
-    { label: "Role",     value: "Robotics Research Assistant" },
-    { label: "Focus",    value: "Scaling, simulation, hardware bring-up" },
-    { label: "Timeline", value: "Apr 2025 – Present" }
-  ],
-
-  hero: {
-    type: "image",
-    src: "../media/bigfoot.jpg",
-    poster: "",
-    note: "Hardware photo from the Robomechanics Lab."
-  },
-
-  sections: [
+  "classLabel": "Flagship",
+  "classTitle": "Legged Locomotion",
+  "classNumber": "Robomechanics Lab",
+  "title": "Bigfoot",
+  "subtitle": "A 1 m quasi-passive biped built from a lab design at 5× scale.",
+  "meta": [
     {
-      heading: "Context",
-      body: "Bigfoot is a human-scale bipedal platform in Carnegie Mellon's Robomechanics Lab. The research problem is scaling: taking a gait that works on a miniature biped and carrying it up to human size without losing it. The work sits in the loop the rest of this site is built around — dynamics in simulation, then carbon fiber and printed parts on the bench, then whatever the hardware teaches you that the simulation didn't.",
-      media: null
+      "label": "Lab",
+      "value": "Robomechanics Lab, CMU"
     },
     {
-      heading: "Approach",
-      body: "The work so far has been scaling, simulation, and hardware bring-up. Designs move between CAD and dynamics models (MuJoCo), then onto physical prototypes. Hardware builds and tests are used to transfer simulation-verified designs into parts that actually walk — and to document what has to change when they don't.",
-      media: null
+      "label": "Role",
+      "value": "Robotics Research Assistant"
+    },
+    {
+      "label": "Scale",
+      "value": "1 m platform · 5× lab design"
+    },
+    {
+      "label": "Timeline",
+      "value": "Apr 2025 – Present"
     }
   ],
-
-  stack: {
-    "Simulation": ["MuJoCo", "Dynamics modeling"],
-    "Design":     ["CAD", "Mechanism design", "Scaling"],
-    "Hardware":   ["Prototype bring-up", "Carbon fiber", "3D printing"]
+  "hero": {
+    "type": "image",
+    "src": "../media/bigfoot.jpg",
+    "poster": "",
+    "note": "Hardware photo from the Robomechanics Lab."
   },
-
-  takeaway: "This page is a placeholder for the full case study. The featured work is ongoing — more write-up and media will land here as hardware results come in.",
-
-  links: [
-    { label: "Robomechanics Lab", href: "https://www.cmu.edu/me/robomechanicslab/" }
+  "sections": [
+    {
+      "heading": "Project at a glance",
+      "body": "I designed and built Bigfoot in CMU’s Robomechanics Lab. Starting with an existing lab biped design, I scaled it 5× to a 1 m platform. The physical robot achieved walking.",
+      "media": null
+    },
+    {
+      "heading": "My contribution",
+      "body": "I worked on the mechanical design and build, MuJoCo simulations, and PD control. I integrated a Raspberry Pi 5 with T-Motor AK80-8 actuators over CAN and used motion capture during the project.",
+      "media": {
+        "type": "empty",
+        "src": "../media/bigfoot-annotated-cad.png",
+        "note": "Annotated CAD/build image · identify the components I designed and the elements inherited from the lab platform."
+      }
+    },
+    {
+      "heading": "Design and integration",
+      "body": "I explored designs in MuJoCo before building the larger platform. The hardware work included connecting the actuators over CAN and implementing PD control on the physical robot.",
+      "media": {
+        "type": "empty",
+        "src": "../media/bigfoot-system.png",
+        "note": "System diagram · Raspberry Pi 5, CAN connection, AK80-8 actuators, control loop, and motion-capture setup."
+      }
+    },
+    {
+      "heading": "Observed result and limits",
+      "body": "The robot achieved walking. Repeatability, speed, step count, and tracking error still need documented test results.",
+      "media": {
+        "type": "empty",
+        "src": "../media/bigfoot-walking.mp4",
+        "note": "Walking demonstration · include test conditions and identify any support or assistance visible in the clip."
+      }
+    },
+    {
+      "heading": "Test evidence to add",
+      "body": "Test documentation is still being added. It will include the setup, controller settings, observations, and changes made between trials.",
+      "media": {
+        "type": "empty",
+        "src": "../media/bigfoot-test-results.png",
+        "note": "Test plot or observation sheet · label units, conditions, trial count, and the design change being evaluated."
+      }
+    },
+    {
+      "heading": "Research status",
+      "body": "I am the first author of a submitted conference paper.",
+      "media": null
+    }
   ],
-
-  backHref: "../index.html",
-  backLabel: "← Back to site"
+  "stack": {
+    "Simulation": [
+      "MuJoCo",
+      "Design exploration"
+    ],
+    "Design": [
+      "Mechanical design",
+      "5× scaling",
+      "Prototype fabrication"
+    ],
+    "Integration": [
+      "Raspberry Pi 5",
+      "CAN",
+      "T-Motor AK80-8"
+    ],
+    "Control & test": [
+      "PD control",
+      "Motion capture",
+      "Physical walking trials"
+    ]
+  },
+  "takeaway": "The project brought my mechanical design, simulation, and control work onto a walking robot. The next step is documenting repeatability and the changes made between trials.",
+  "links": [
+    {
+      "label": "Robomechanics Lab",
+      "href": "https://www.cmu.edu/me/robomechanicslab/"
+    }
+  ],
+  "backHref": "../index.html",
+  "backLabel": "← Back to site"
 };
 </script>
 
@@ -91,7 +151,7 @@ const PAGE = {
   <section class="sec">
     <div class="sec-head"><h2>Takeaway</h2><span class="line"></span></div>
     <div class="takeaway">
-      <span class="takeaway-label">In one paragraph</span>
+
       <p id="j-takeaway"></p>
     </div>
     <ul class="linksout" id="j-linksout"></ul>
@@ -106,7 +166,7 @@ const PAGE = {
 (function(){
   const esc = s => String(s == null ? "" : s);
   const $ = id => document.getElementById(id);
-  document.title = PAGE.title + " — Ricardo Castro";
+  document.title = PAGE.title + " · Ricardo Castro";
   $("j-category").textContent = PAGE.classLabel + " · " + PAGE.classTitle;
   $("j-title").textContent = PAGE.title;
   $("j-sub").textContent = PAGE.subtitle;
@@ -122,15 +182,15 @@ const PAGE = {
     const cls = "frame " + klass;
     if(!m || m.type === "empty"){
       return `<div class="${cls}"><div class="frame-empty">
-        <span class="fe-tag">Media slot — empty</span>
+        <span class="fe-tag">Media to add</span>
         <span class="fe-note">${esc(m ? m.note : "")}</span>
-        <span class="fe-path">${esc(m ? m.src : "")}</span>
+
       </div></div>`;
     }
     if(m.type === "video"){
-      return `<div class="${cls}"><video src="${esc(m.src)}" ${m.poster ? `poster="${esc(m.poster)}"` : ""} autoplay muted loop playsinline></video></div>`;
+      return `<div class="${cls}"><video src="${esc(m.src)}" ${m.poster ? `poster="${esc(m.poster)}"` : ""} controls playsinline preload="metadata"></video></div>`;
     }
-    return `<div class="${cls}"><img src="${esc(m.src)}" alt="" loading="lazy"></div>`;
+    return `<div class="${cls}"><img src="${esc(m.src)}" alt="${esc(m.alt || m.note || PAGE.title)}" loading="lazy"></div>`;
   }
   $("j-hero").innerHTML = mediaHTML(PAGE.hero, "frame-hero");
   $("j-sections").innerHTML = PAGE.sections.map(s => `

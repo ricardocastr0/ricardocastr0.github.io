@@ -1,7 +1,7 @@
 /* ============================================================= */
 /*  Shared site navigation.                                      */
 /*  Edit NAV_LINKS below to add, remove, or rename nav items or   */
-/*  dropdown entries — every page on the site pulls from here.    */
+/*  dropdown entries · every page on the site pulls from here.    */
 /*                                                                */
 /*  Each page must set window.NAV_BASE before loading this file:  */
 /*    index.html         ->  window.NAV_BASE = "";                */
@@ -11,9 +11,13 @@
   const base = window.NAV_BASE || "";
 
   const NAV_LINKS = [
-    { label: "Bigfoot", href: base + "projects/bigfoot.html" },
+    { label: "Engineering work", children: [
+      { label: "Bigfoot walking biped", href: base + "projects/bigfoot.html" },
+      { label: "Robotic-hand mechanisms", href: base + "projects/origami.html" },
+      { label: "Industrial sensing", href: base + "projects/nucor.html" }
+    ] },
     {
-      label: "Academic Projects",
+      label: "Campus work",
       children: [
         { label: "Rethink the Rink", href: base + "projects/academic-projects.html#rethink-the-rink" },
         { label: "Greek Sing Sets",  href: base + "projects/academic-projects.html#greek-sing-sets" },
@@ -21,7 +25,7 @@
       ]
     },
     {
-      label: "Class Projects",
+      label: "Coursework",
       children: [
         { label: "AI/ML for Modern Manufacturing", href: base + "projects/ai-ml-manufacturing.html" },
         { label: "Intro to CAD/CAE",                href: base + "projects/intro-cad-cae.html" },
@@ -61,7 +65,7 @@
   if (mount) mount.replaceWith(nav);
   else document.body.insertBefore(nav, document.body.firstChild);
 
-  // Dropdown toggle — click-based so it works on touch and keyboard, not just hover.
+  // Dropdown toggle · click-based so it works on touch and keyboard, not just hover.
   nav.querySelectorAll(".nav-toggle").forEach(btn => {
     btn.addEventListener("click", (e) => {
       e.stopPropagation();

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Intro to CAD/CAE Tools (24-688) — Ricardo Castro</title>
-<meta name="description" content="Class project from CMU 24-688 Introduction to CAD and CAE Tools — a two-bike hitch rack designed from concept through FEA-driven optimization and DFM for volume production.">
+<title>Intro to CAD/CAE Tools (24-688) · Ricardo Castro</title>
+<meta name="description" content="Class project from CMU 24-688 Introduction to CAD and CAE Tools · a two-bike hitch rack designed from concept through FEA-driven optimization and DFM for volume production.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -20,77 +20,98 @@
 <!-- ============================================================= -->
 <script>
 const PAGE = {
-
-  classLabel: "Class Project",
-  classTitle: "Intro to CAD/CAE Tools",
-  classNumber: "24-688",
-  title: "Hitch-Mounted Bike Carrier",
-  subtitle: "FEA found the failure point. Material strategy cut two-thirds of the weight.",
-  meta: [
-    { label: "Course",   value: "24-688 Introduction to CAD and CAE Tools" },
-    { label: "Role",     value: "Team of 4 — concept lead, FEA, materials" },
-    { label: "Target",   value: "Volume production, 45,000 units" },
-    { label: "Timeline", value: "Fall 2025" }
+  "classLabel": "Class Project",
+  "classTitle": "Intro to CAD/CAE Tools",
+  "classNumber": "24-688",
+  "title": "Hitch-Mounted Bike Carrier",
+  "subtitle": "A two-bike hitch rack designed with CAD, structural FEA, and a manufacturing cost estimate.",
+  "meta": [
+    {
+      "label": "Course",
+      "value": "24-688 Introduction to CAD and CAE Tools"
+    },
+    {
+      "label": "Role",
+      "value": "Team of 4 · concept lead, FEA, materials"
+    },
+    {
+      "label": "Costing scenario",
+      "value": "45,000 units · planning only"
+    },
+    {
+      "label": "Timeline",
+      "value": "Fall 2025"
+    }
   ],
-
-  hero: {
-    type: "empty",
-    src: "../media/bike-carrier-render.png",
-    poster: "",
-    note: "Best hero: the final CAD render of the folded rack on a vehicle (from your slide deck). Landscape aspect ratio."
+  "hero": {
+    "type": "empty",
+    "src": "../media/bike-carrier-render.png",
+    "poster": "",
+    "note": "Final CAD render of the rack mounted on a vehicle."
   },
-
-  sections: [
+  "sections": [
     {
-      heading: "Context",
-      body: "Client brief was straightforward — a two-bike hitch-mounted rack, foldable for storage, quick to install and remove, compatible with multiple bike sizes, and buildable at 45,000-unit volume. The design space is crowded, so the differentiator wasn't going to be capacity or feature count. It was going to be whether the structure held up under load without dragging the weight up into a range that made installation a two-person job.",
-      media: null
+      "heading": "Context",
+      "body": "The course brief called for a two-bike hitch rack that folds for storage, is easy to install and remove, and fits multiple bike sizes. Our team developed the design and a manufacturing cost estimate for a hypothetical 45,000-unit volume.",
+      "media": null
     },
     {
-      heading: "Constraints",
-      body: "Standard 2-inch receiver hitch geometry. Two full-size bikes worth of static and dynamic load through the connection to the vehicle. A cost buildup that had to close at volume, which meant favoring automated processes (CNC, tube bending, robotic welding) over hand fabrication. And a folded footprint small enough that the rack could actually live in a garage between trips rather than staying bolted to the car.",
-      media: {
-        type: "empty",
-        src: "../media/bike-carrier-concepts.png",
-        caption: "Concept sketches — four candidate approaches evaluated against the brief.",
-        note: "The four hand-sketched concepts from the slide deck. Recruiters like seeing that concept sketches happened, not just the final CAD."
+      "heading": "Constraints",
+      "body": "The rack had to fit a standard 2-inch receiver hitch and carry two full-size bikes. We considered static and dynamic loads, the folded storage footprint, and manufacturing cost. The manufacturing plan included CNC machining, tube bending, and robotic welding.",
+      "media": {
+        "type": "empty",
+        "src": "../media/bike-carrier-concepts.png",
+        "caption": "Concept sketches · four candidate approaches evaluated against the brief.",
+        "note": "Four concept sketches with the selection criteria."
       }
     },
     {
-      heading: "Approach",
-      body: "Selected a foldable platform-tray concept from four candidates against install ease, bike-size compatibility, and folded footprint. Static stress FEA on the initial design located a choke point at the hitch connection — a stress concentration at the edge between the main hitch and the connection joint where the geometry couldn't distribute load smoothly. Iterated the geometry: added support prongs to increase surface-area contact at the connection, reinforced the wheel-cradle arms. Then attacked the mass problem via material strategy — aluminum on everything except the hitch joint, where steel stays for the load path that matters most. Closed with a DFM plan mapping each subassembly to a specific process: CNC for the shank/support tube/joint, tube bending for the wheel cradles and frame hooks, robotic welding for the main hitch assembly.",
-      media: {
-        type: "empty",
-        src: "../media/bike-carrier-fea.png",
-        caption: "Von Mises stress plot after material change. Safety factor holds at 2.465.",
-        note: "The FEA safety-factor plot from the slide deck (the one with the color legend and Min 2.465 callout)."
+      "heading": "Approach",
+      "body": "We selected a folding platform-tray design from four concepts. Static FEA showed a stress concentration at the hitch connection. We added support prongs and reinforced the wheel-cradle arms, then used aluminum for most components while retaining steel at the hitch joint. The manufacturing plan assigned machining, tube bending, and welding processes to the subassemblies.",
+      "media": {
+        "type": "empty",
+        "src": "../media/bike-carrier-fea.png",
+        "caption": "FEA result: reported minimum safety factor 2.465 under the modeled conditions.",
+        "note": "The FEA safety-factor plot from the slide deck (the one with the color legend and Min 2.465 callout)."
       }
     },
     {
-      heading: "Results",
-      body: "Total assembly mass dropped from 80.2 kg to 27.6 kg — a 66% reduction — while the safety factor stayed in the target range (2.465 minimum after the material change). The choke point identified in the initial FEA was resolved by the geometry revision and the strategic material change, with the residual load path staying in steel where it matters. The DFM plan closed with a per-unit cost buildup for the 45,000-unit production run, mapping raw material, fabrication, powder coating, and assembly to processes with realistic quotes.",
-      media: {
-        type: "empty",
-        src: "../media/bike-carrier-final.png",
-        caption: "Final assembly, folded position — mounted to the vehicle.",
-        note: "The final rendered image showing the rack mounted on the car (from the slide deck)."
+      "heading": "Results",
+      "body": "Reported assembly mass fell from 80.2 to 27.6 kg, a reduction of about 66%. The mass values still need to be identified as measured or CAD-estimated. The minimum FEA safety factor was 2.465 under the modeled conditions. These were design and simulation results. The 45,000-unit volume was a costing assumption.",
+      "media": {
+        "type": "empty",
+        "src": "../media/bike-carrier-final.png",
+        "caption": "Final assembly, folded position · mounted to the vehicle.",
+        "note": "The final rendered image showing the rack mounted on the car (from the slide deck)."
       }
     }
   ],
-
-  stack: {
-    "CAD":           ["Fusion 360", "Parametric modeling", "Assembly design"],
-    "Simulation":    ["Static stress FEA", "Von Mises", "Safety-factor analysis"],
-    "Manufacturing": ["CNC machining", "Tube bending", "Robotic welding"],
-    "Design":        ["DFM/DFA", "Cost estimation", "Concept evaluation matrix"]
+  "stack": {
+    "CAD": [
+      "Fusion 360",
+      "Parametric modeling",
+      "Assembly design"
+    ],
+    "Simulation": [
+      "Static stress FEA",
+      "Von Mises",
+      "Safety-factor analysis"
+    ],
+    "Manufacturing": [
+      "CNC machining",
+      "Tube bending",
+      "Robotic welding"
+    ],
+    "Design": [
+      "DFM/DFA",
+      "Cost estimation",
+      "Concept evaluation matrix"
+    ]
   },
-
-  takeaway: "The interesting decision on this project wasn't the initial design — it was refusing to solve the failure at the choke point with more material everywhere. Steel is easy; aluminum plus a targeted steel reinforcement at the load path forces you to actually understand where the stress goes. The 66% weight reduction wasn't the goal, it was the byproduct of that choice.",
-
-  links: [],
-
-  backHref: "../index.html",
-  backLabel: "← Back to site"
+  "takeaway": "We changed the geometry and materials around the hitch connection to reduce reported mass while retaining the required simulated safety factor. The load assumptions and comparison figures will be added with the FEA plots.",
+  "links": [],
+  "backHref": "../index.html",
+  "backLabel": "← Back to site"
 };
 </script>
 
@@ -115,7 +136,7 @@ const PAGE = {
   <section class="sec">
     <div class="sec-head"><h2>Takeaway</h2><span class="line"></span></div>
     <div class="takeaway">
-      <span class="takeaway-label">In one paragraph</span>
+
       <p id="j-takeaway"></p>
     </div>
     <ul class="linksout" id="j-linksout"></ul>
@@ -130,7 +151,7 @@ const PAGE = {
 (function(){
   const esc = s => String(s == null ? "" : s);
   const $ = id => document.getElementById(id);
-  document.title = PAGE.classTitle + " (" + PAGE.classNumber + ") — Ricardo Castro";
+  document.title = PAGE.classTitle + " (" + PAGE.classNumber + ") · Ricardo Castro";
   $("j-category").textContent = PAGE.classLabel + " · " + PAGE.classNumber + " " + PAGE.classTitle;
   $("j-title").textContent = PAGE.title;
   $("j-sub").textContent = PAGE.subtitle;
@@ -146,15 +167,15 @@ const PAGE = {
     const cls = "frame " + klass;
     if(!m || m.type === "empty"){
       return `<div class="${cls}"><div class="frame-empty">
-        <span class="fe-tag">Media slot — empty</span>
+        <span class="fe-tag">Media to add</span>
         <span class="fe-note">${esc(m ? m.note : "")}</span>
-        <span class="fe-path">${esc(m ? m.src : "")}</span>
+
       </div></div>`;
     }
     if(m.type === "video"){
-      return `<div class="${cls}"><video src="${esc(m.src)}" ${m.poster ? `poster="${esc(m.poster)}"` : ""} autoplay muted loop playsinline></video></div>`;
+      return `<div class="${cls}"><video src="${esc(m.src)}" ${m.poster ? `poster="${esc(m.poster)}"` : ""} controls playsinline preload="metadata"></video></div>`;
     }
-    return `<div class="${cls}"><img src="${esc(m.src)}" alt="" loading="lazy"></div>`;
+    return `<div class="${cls}"><img src="${esc(m.src)}" alt="${esc(m.alt || m.note || PAGE.title)}" loading="lazy"></div>`;
   }
   $("j-hero").innerHTML = mediaHTML(PAGE.hero, "frame-hero");
   $("j-sections").innerHTML = PAGE.sections.map(s => `

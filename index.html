@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ricky Castro — Mechanical Engineering &amp; Robotics</title>
-<meta name="description" content="Portfolio of Ricky Castro — mechanical engineering and robotics at Carnegie Mellon. Legged locomotion, controls, mechatronic design, and manufacturing.">
+<title>Ricardo Castro · Mechanical Engineering &amp; Robotics</title>
+<meta name="description" content="Ricardo Castro · Carnegie Mellon BS/MS Mechanical Engineering, expected May 2027. Robotics hardware, mechatronics, mechanical design, integration, and testing.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -15,105 +15,179 @@
 <div id="site-nav"></div>
 
 <!-- ============================================================= -->
-<!--  EDIT ZONE — everything you'll ever change lives below.       -->
+<!--  EDIT ZONE · everything you'll ever change lives below.       -->
 <!--  Change text, swap media filenames, add or remove rows.       -->
 <!--  Do not touch anything past the "STOP" marker further down.   -->
 <!-- ============================================================= -->
 <script>
 const SITE = {
-
-  /* ---------- HEADER ---------- */
-  name: "Ricardo Castro",
-
-  titleBlock: [
-    { label: "Discipline",  value: "Mechanical Engineering, BS / MS" },
-    { label: "Institution", value: "Carnegie Mellon University" },
-    { label: "Focus",       value: "Legged Robotics · Controls" },
-    { label: "Graduating",  value: "May 2027" }
-  ],
-
-  thesis: "I build legged robots, wearable mechanisms, and the control policies that drive them. Most of my work runs the full loop: dynamics in simulation, then carbon fiber and printed parts on the bench, then whatever the hardware teaches you that the simulation didn't.",
-
-  links: [
-    { label: "Résumé (PDF)", href: "resume.pdf" },
-    { label: "GitHub",       href: "https://github.com/ricardocastr0" },
-    { label: "LinkedIn",     href: "https://www.linkedin.com/in/ricky-castro/" },
-    { label: "Email",        href: "mailto:rickycastro2023@gmail.com" }
-  ],
-
-  /* ---------- ABOUT ---------- */
-  about: {
-    body: "I'm an integrated BS/MS Mechanical Engineering student at Carnegie Mellon, graduating May 2027, focused on legged robotics and control theory. Most projects run the same loop — design in Onshape or Fusion, simulate in MuJoCo or run an FEA pass, then rebuild whatever the hardware reveals that the simulation didn't. Outside the lab, I serve as Vice President of CMU's ASME chapter and lead set design for Greek Sing. Bilingual in English and Spanish."
-  },
-
-  /* ---------- EXPERIENCE ----------
-     The Robomechanics Lab row is featured — it's the one with a full
-     case-study subpage (Bigfoot). Add `href` to any other row once it
-     has somewhere to link to.
-  ------------------------------------------------------------------ */
-  experience: [
-    { role: "Robotics Research Assistant", org: "Robomechanics Lab, CMU", date: "Apr 2025 – Present", note: "Legged locomotion — scaling, simulation, and hardware bring-up on Bigfoot, a human-scale bipedal platform.", href: "projects/bigfoot.html", featured: true },
-    { role: "Automation Intern",           org: "Nucor",                     date: "May – Aug 2026",   note: "Signal processing and regression modeling for industrial condition monitoring; .NET application development; structural simulation of mill equipment." },
-    { role: "Mechanical Design Intern",    org: "Origami Robotics",          date: "Aug 2025 – Jan 2026", note: "Teleoperation hardware and parametric mechanism design — a glove controller mapping proportional hand motion onto a servo-driven hand." },
-    { role: "Research Assistant",          org: "NeuroMechatronics Lab, CMU", date: "Dec 2024 – May 2025", note: "Designed and fabricated a fiber-reinforced printed wrist module for a hand exoskeleton targeting finger mobility rehabilitation." },
-    { role: "Teaching Assistant / Grader", org: "CMU Mechanical Engineering", date: "2024 – Present",  note: "24-311 Numerical Methods · 24-352 Dynamic Systems &amp; Controls · 24-215 Smart Furniture · 24-101 Intro to ME." },
-    { role: "Manufacturing Intern",        org: "Manufacturing Futures Institute, CMU", date: "May – Aug 2024", note: "Programmed MIG and laser welding workflows on the Lincoln Electric Classmate Laser via FANUC controller; designed a 30° tiltable modular fixturing table, machined on HAAS CNC and waterjet." }
-  ],
-
-  /* ---------- LEADERSHIP ---------- */
-  leadership: [
-    { role: "Vice President (previously Treasurer)", org: "ASME, CMU Chapter", date: "2024 – Present", note: "Focus on club culture and Pittsburgh community connection." },
-    { role: "Sets Chair", org: "Greek Sing, Phi Delta Theta, CMU", date: "Aug 2024 – Present", note: "Designed a 20' × 12' modular stage set in SolidWorks with platforms, doors, and moving elements; led 200+ fabrication hours and a 30-person build crew.", href: "projects/academic-projects.html#greek-sing-sets" },
-    { role: "Booth Committee Member", org: "Spring Carnival, CMU", date: "", note: "Hands-on building, decorating, and troubleshooting attachment points; reading technical drawings.", href: "projects/academic-projects.html#booth-committee" }
-  ],
-
-  /* ---------- PROJECT HUBS ----------
-     The big project write-ups now live on their own pages, grouped by
-     what they have in common. This section just points to them.
-  ------------------------------------------------------------------ */
-  hubs: [
+  "name": "Ricardo Castro",
+  "titleBlock": [
     {
-      title: "Bigfoot",
-      eyebrow: "Flagship — Legged Locomotion",
-      body: "A human-scale bipedal platform in the Robomechanics Lab — scaling a miniature biped up to human size without losing the gait.",
-      links: [ { label: "Read the case study →", href: "projects/bigfoot.html" } ]
+      "label": "Discipline",
+      "value": "Mechanical Engineering, BS / MS"
     },
     {
-      title: "Academic Projects",
-      eyebrow: "Lab, sponsored, and campus work",
-      body: "Design and leadership work carried out through CMU-affiliated projects and organizations, outside of coursework.",
-      links: [
-        { label: "Rethink the Rink",    href: "projects/academic-projects.html#rethink-the-rink" },
-        { label: "Greek Sing Sets",     href: "projects/academic-projects.html#greek-sing-sets" },
-        { label: "Booth Committee",     href: "projects/academic-projects.html#booth-committee" }
+      "label": "Institution",
+      "value": "Carnegie Mellon University"
+    },
+    {
+      "label": "Focus",
+      "value": "Robotics hardware · Mechatronics"
+    },
+    {
+      "label": "Graduating",
+      "value": "May 2027"
+    }
+  ],
+  "thesis": "I build robots and the hardware that runs them. My projects include a 1 m walking biped, robotic-hand mechanisms, and industrial sensing systems.",
+  "links": [
+    {
+      "label": "Download résumé (PDF)",
+      "href": "resume.pdf",
+      "download": "Ricardo_Castro_Resume.pdf"
+    },
+    {
+      "label": "GitHub",
+      "href": "https://github.com/ricardocastr0"
+    },
+    {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/ricky-castro/"
+    },
+    {
+      "label": "Email",
+      "href": "mailto:rickycastro2023@gmail.com"
+    }
+  ],
+  "about": {
+    "body": "I'm a BS/MS Mechanical Engineering student at Carnegie Mellon, graduating in May 2027. I want to work on humanoids, robotic hands, and manipulation. My experience includes mechanical design, actuator and sensor integration, controls, and prototyping. Outside the lab, I'm Vice President of CMU's ASME chapter and lead set design for Greek Sing. I speak English and Spanish."
+  },
+  "experience": [
+    {
+      "role": "Robotics Research Assistant",
+      "org": "Robomechanics Lab, CMU",
+      "date": "Apr 2025 – Present",
+      "note": "Designed and built a 1 m quasi-passive biped, scaling a lab design 5×. Work includes MuJoCo design exploration, PD control, and Raspberry Pi 5/CAN actuator integration. The physical platform achieved walking.",
+      "href": "projects/bigfoot.html",
+      "featured": true
+    },
+    {
+      "role": "Automation Intern",
+      "org": "Nucor",
+      "date": "May – Aug 2026",
+      "note": ".NET vibration-anomaly detector using signal processing and regression, plus an IMU/ESP32-S3 crane-orientation display mounted to the main remote controller.",
+      "href": "projects/nucor.html"
+    },
+    {
+      "role": "Mechanical Design Intern",
+      "org": "Origami Robotics",
+      "date": "Aug 2025 – Jan 2026",
+      "note": "Onshape/FeatureScript mechanism design, finger and linkage prototyping, and glove potentiometer-to-servo control for a robotic hand.",
+      "href": "projects/origami.html"
+    },
+    {
+      "role": "Research Assistant",
+      "org": "NeuroMechatronics Lab, CMU",
+      "date": "Dec 2024 – May 2025",
+      "note": "Designed and fabricated a fiber-reinforced printed wrist module for a hand exoskeleton targeting finger mobility rehabilitation."
+    },
+    {
+      "role": "Teaching Assistant / Grader",
+      "org": "CMU Mechanical Engineering",
+      "date": "2024 – Present",
+      "note": "24-311 Numerical Methods · 24-352 Dynamic Systems &amp; Controls · 24-215 Smart Furniture · 24-101 Intro to ME."
+    },
+    {
+      "role": "Manufacturing Intern",
+      "org": "Manufacturing Futures Institute, CMU",
+      "date": "May – Aug 2024",
+      "note": "Programmed MIG and laser welding workflows on the Lincoln Electric Classmate Laser via FANUC controller; designed a 30° tiltable modular fixturing table, machined on HAAS CNC and waterjet."
+    }
+  ],
+  "leadership": [
+    {
+      "role": "Vice President (previously Treasurer)",
+      "org": "ASME, CMU Chapter",
+      "date": "2024 – Present",
+      "note": "Focus on club culture and Pittsburgh community connection."
+    },
+    {
+      "role": "Sets Chair",
+      "org": "Greek Sing, Phi Delta Theta, CMU",
+      "date": "Aug 2024 – Present",
+      "note": "Served as Sets Chair for two different musicals, leading set design, fabrication, and backstage deployment. Responsibilities include SolidWorks drawings, material purchasing, budgeting, and crew coordination.",
+      "href": "projects/academic-projects.html#greek-sing-sets"
+    },
+    {
+      "role": "Booth Committee Member",
+      "org": "Spring Carnival, CMU",
+      "date": "",
+      "note": "Hands-on building, decorating, and troubleshooting attachment points; reading technical drawings.",
+      "href": "projects/academic-projects.html#booth-committee"
+    }
+  ],
+  "hubs": [
+    {
+      "title": "Bigfoot walking biped",
+      "eyebrow": "Robotics hardware · Controls",
+      "body": "I designed and built a 1 m quasi-passive biped based on a lab design at 5× scale. I integrated the actuators and controls, and the robot achieved walking.",
+      "links": [
+        {
+          "label": "Design, integration & results →",
+          "href": "projects/bigfoot.html"
+        }
       ]
     },
     {
-      title: "Class Projects",
-      eyebrow: "Coursework, grouped by class",
-      body: "Project work from CMU Mechanical Engineering coursework, organized by the class it came from.",
-      links: [
-        { label: "AI/ML for Modern Manufacturing (24-641)", href: "projects/ai-ml-manufacturing.html" },
-        { label: "Intro to CAD/CAE Tools (24-688)",         href: "projects/intro-cad-cae.html" },
-        { label: "Mechanical Design: Methods and Applications (24-370)", href: "projects/mechanical-design.html" }
+      "title": "Robotic-hand mechanisms",
+      "eyebrow": "Origami Robotics · Internship",
+      "body": "I designed parametric mechanisms, prototyped fingers and linkages, and worked on glove-to-servo control for a robotic hand.",
+      "links": [
+        {
+          "label": "Mechanisms & contribution →",
+          "href": "projects/origami.html"
+        }
+      ]
+    },
+    {
+      "title": "Industrial sensing",
+      "eyebrow": "Nucor · Internship",
+      "body": "I developed a vibration-anomaly detector in .NET and a crane-orientation display that attaches to the main remote controller.",
+      "links": [
+        {
+          "label": "Two systems & contribution →",
+          "href": "projects/nucor.html"
+        }
       ]
     }
   ],
-
-  /* ---------- CAPABILITIES ---------- */
-  capabilities: [
-    { group: "Design & Simulation", items: "SolidWorks · Onshape · Fusion 360 · AutoCAD · ANSYS (FEA) · MuJoCo · Gazebo · GD&amp;T · Technical drawings · DFM/DFAM" },
-    { group: "Programming",         items: "Python · C++ · MATLAB · Simulink · C# / .NET" },
-    { group: "Fabrication",         items: "CNC machining · Manual mill &amp; lathe · MIG &amp; laser welding · Laser and waterjet cutting · 3D printing · Carbon fiber layup" },
-    { group: "Languages",           items: "English (native) · Spanish (fluent)" }
+  "capabilities": [
+    {
+      "group": "Design & Simulation",
+      "items": "SolidWorks · Onshape · Fusion 360 · AutoCAD · ANSYS (FEA) · MuJoCo · Gazebo · GD&amp;T · Technical drawings · DFM/DFAM"
+    },
+    {
+      "group": "Integration & test",
+      "items": "PD control · Raspberry Pi 5 / CAN · T-Motor AK80-8 · Motion capture · IMU / ESP32-S3 · Arduino"
+    },
+    {
+      "group": "Programming",
+      "items": "Python · C++ · MATLAB · Simulink · C# / .NET"
+    },
+    {
+      "group": "Fabrication",
+      "items": "CNC machining · Manual mill &amp; lathe · MIG &amp; laser welding · Laser and waterjet cutting · 3D printing · Carbon fiber layup"
+    },
+    {
+      "group": "Languages",
+      "items": "English (native) · Spanish (fluent)"
+    }
   ],
-
-  /* ---------- CONTACT ---------- */
-  contact: {
-    body: "Best reached by email — happy to talk about robotics, mechanical design, or anything on this site in more depth."
+  "contact": {
+    "body": "Seeking full-time mechanical design, mechatronics, robotics hardware, integration, and test roles after my expected May 2027 graduation. I’m especially interested in teams building humanoids, robotic hands, and manipulation systems. Email is the best way to reach me."
   },
-
-  footerNote: "Built and maintained by hand. Last revised September 2026."
+  "footerNote": "Built and maintained by hand. Last revised September 2026."
 };
 </script>
 
@@ -160,7 +234,7 @@ a{color:inherit}
   font-family:"Archivo",system-ui,sans-serif;
   font-variation-settings:"wdth" 112,"wght" 800;
   font-weight:800;
-  font-size:clamp(48px,11.5vw,116px);
+  font-size:clamp(44px,9vw,92px);
   line-height:.9;letter-spacing:-.03em;
   margin:14px 0 0;text-transform:uppercase;
 }
@@ -180,6 +254,9 @@ a{color:inherit}
   max-width:60ch;margin:34px 0 0;font-size:clamp(18px,2.3vw,21px);
   line-height:1.55;color:var(--ink);
 }
+.availability{font-size:15px;color:var(--ink-2);margin:18px 0 0;max-width:65ch}
+.more-work{font-size:15px;line-height:1.8;margin-top:22px}
+.hub{min-width:0}
 .links{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0 0;padding:0;list-style:none}
 .links a{
   display:inline-block;padding:9px 16px;border:1.5px solid var(--ink);
@@ -270,8 +347,16 @@ footer{margin-top:64px;border-top:2px solid var(--ink);padding:22px 0 56px}
     <div class="hero-rule"></div>
     <div class="titleblock" id="j-titleblock"></div>
     <p class="thesis" id="j-thesis"></p>
+    <p class="availability">Seeking full-time engineering roles after graduation · Expected May 2027</p>
     <ul class="links" id="j-links"></ul>
   </header>
+
+  <section class="sec" id="projects">
+    <div class="sec-head"><h2>Selected engineering work</h2><span class="line"></span></div>
+    <p class="sec-intro">Start with these projects for mechanical design, robotics hardware, and integration experience.</p>
+    <div class="hubs" id="j-hubs"></div>
+    <p class="more-work">More work: <a href="projects/intro-cad-cae.html">Bike carrier design &amp; FEA</a> · <a href="projects/mechanical-design.html">Motor-controlled scissors</a> · <a href="projects/defect-detection.html">Vision-to-Arduino prototype</a> · <a href="projects/ai-ml-manufacturing.html">AI/ML coursework</a> · <a href="projects/academic-projects.html">Campus design &amp; leadership</a></p>
+  </section>
 
   <section class="sec" id="about">
     <div class="sec-head"><h2>About</h2><span class="line"></span></div>
@@ -288,12 +373,7 @@ footer{margin-top:64px;border-top:2px solid var(--ink);padding:22px 0 56px}
     <div class="exp" id="j-lead"></div>
   </section>
 
-  <section class="sec">
-    <div class="sec-head"><h2>Projects</h2><span class="line"></span></div>
-    <div class="hubs" id="j-hubs"></div>
-  </section>
-
-  <section class="sec">
+<section class="sec">
     <div class="sec-head"><h2>Capabilities</h2><span class="line"></span></div>
     <div id="j-cap"></div>
   </section>
@@ -315,7 +395,7 @@ footer{margin-top:64px;border-top:2px solid var(--ink);padding:22px 0 56px}
   const esc = s => String(s == null ? "" : s);
   const $ = id => document.getElementById(id);
 
-  document.title = SITE.name + " — Mechanical Engineering & Robotics";
+  document.title = SITE.name + " · Mechanical Engineering & Robotics";
   $("j-eyebrow").textContent = "Portfolio";
   $("j-name").textContent = SITE.name;
   $("j-thesis").textContent = SITE.thesis;
@@ -327,7 +407,7 @@ footer{margin-top:64px;border-top:2px solid var(--ink);padding:22px 0 56px}
     `<div class="tb-cell"><span class="tb-label">${esc(c.label)}</span><span class="tb-value">${esc(c.value)}</span></div>`
   ).join("");
 
-  const linksHTML = SITE.links.map(l => `<li><a href="${esc(l.href)}">${esc(l.label)}</a></li>`).join("");
+  const linksHTML = SITE.links.map(l => `<li><a href="${esc(l.href)}"${l.download ? ` download="${esc(l.download)}"` : ""}>${esc(l.label)}</a></li>`).join("");
   $("j-links").innerHTML = linksHTML;
   $("j-links-2").innerHTML = linksHTML;
 

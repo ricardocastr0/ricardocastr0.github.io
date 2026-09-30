@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Academic Projects — Ricardo Castro</title>
+<title>Academic Projects · Ricardo Castro</title>
 <meta name="description" content="Design and leadership work carried out through CMU-affiliated projects and organizations, outside of coursework: Rethink the Rink, Greek Sing Sets, and Spring Carnival Booth.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,47 +20,87 @@
 <!-- ============================================================= -->
 <script>
 const PAGE = {
-
-  classLabel: "Academic Projects",
-  title: "Academic Projects",
-  subtitle: "Design and leadership work carried out through CMU-affiliated projects and organizations, outside of coursework.",
-  meta: [
-    { label: "Scope",  value: "Sponsored design, campus leadership" },
-    { label: "School", value: "Carnegie Mellon University" }
-  ],
-
-  projects: [
+  "classLabel": "Academic Projects",
+  "title": "Academic Projects",
+  "subtitle": "Design and leadership work carried out through CMU-affiliated projects and organizations, outside of coursework.",
+  "meta": [
     {
-      id: "rethink-the-rink",
-      title: "Rethink the Rink",
-      meta: "CMU × Covestro × Pittsburgh Penguins · 2024 & 2025",
-      body: "Led material ideation, CAD modeling, and prototyping across two consecutive Covestro-sponsored safety challenges, developing protective glove and neck guard systems in collaboration with Covestro engineers and the Pittsburgh Penguins. The work centered on layered material configurations that absorb and disperse collision energy without sacrificing the range of motion players actually need — findings presented directly to industry sponsors both years.",
-      spec: { value: "2 awards", label: "Most Innovative Design 2024 · Team MVP 2025" },
-      stack: ["Material selection", "Prototyping", "SolidWorks", "Impact testing"],
-      hero: { type: "image", src: "../media/rink.png", note: "Prototype photo, or a team photo from the sponsor presentation. Awards make this one worth showing." }
+      "label": "Scope",
+      "value": "Sponsored design, campus leadership"
     },
     {
-      id: "greek-sing-sets",
-      title: "Greek Sing Sets",
-      meta: "Phi Delta Theta, CMU · Aug 2024 – Present · Sets Chair",
-      body: "Designed a 20' × 12' modular stage set in SolidWorks with platforms, doors, and moving elements, then led over 200 fabrication hours and a 30-person build crew to bring it from CAD to a working stage.",
-      spec: null,
-      stack: ["SolidWorks", "Modular set design", "Crew leadership", "Fabrication"],
-      hero: { type: "image", src: "../media/greek-sing.png", note: "Photo of the built set on stage, or the crew mid-build." }
-    },
-    {
-      id: "booth-committee",
-      title: "Spring Carnival Booth",
-      meta: "CMU Spring Carnival · Booth Committee",
-      body: "Hands-on building, decorating, and troubleshooting attachment points on the committee's Spring Carnival booth — reading and working from technical drawings rather than driving the structural engineering itself.",
-      spec: null,
-      stack: ["Fabrication", "Technical drawing reading", "Attachment/assembly troubleshooting"],
-      hero: { type: "image", src: "../media/booth.png", note: "Photo of the booth structure or the build crew at work." }
+      "label": "School",
+      "value": "Carnegie Mellon University"
     }
   ],
-
-  backHref: "../index.html",
-  backLabel: "← Back to site"
+  "projects": [
+    {
+      "id": "rethink-the-rink",
+      "title": "Rethink the Rink",
+      "meta": "CMU × Covestro × Pittsburgh Penguins · 2024 & 2025",
+      "body": "I led material selection, CAD modeling, and prototyping for two Covestro-sponsored safety challenges. Our teams developed protective glove and neck guard concepts with Covestro engineers and the Pittsburgh Penguins. We explored layered materials for impact protection and range of motion, then presented our findings to the sponsors in 2024 and 2025.",
+      "spec": {
+        "value": "2 awards",
+        "label": "Most Innovative Design 2024 · Team MVP 2025"
+      },
+      "stack": [
+        "Material selection",
+        "Prototyping",
+        "SolidWorks",
+        "Impact testing"
+      ],
+      "hero": {
+        "type": "image",
+        "src": "../media/rink.png",
+        "note": "Rethink the Rink prototype and project team."
+      }
+    },
+    {
+      "id": "greek-sing-sets",
+      "title": "Greek Sing Sets",
+      "meta": "Phi Delta Theta, CMU · Two productions · Sets Chair",
+      "body": "Greek Sing is a student musical theater competition at Carnegie Mellon. Fraternity and sorority pairs stage 12–15 minute musicals and raise money for local nonprofits. I have served as Sets Chair for two different shows, leading set design, construction, and backstage deployment with our partner sorority.",
+      "details": [
+        {
+          "heading": "Design and fabrication",
+          "body": "My role covers CAD, fabrication drawings, and hands-on construction. For the 2025 production, I modeled all structural components in SolidWorks and led the build of more than eight custom set pieces, including wheeled backdrops, hinged frames, and spiral stairs. That production involved more than 200 hours of build work using jigsaws, miter saws, circular saws, and bore bits."
+        },
+        {
+          "heading": "Budget and materials",
+          "body": "The role includes budgeting and ordering materials around the production schedule. For the 2025 show, I managed a $1,700 budget and ordered raw materials across three major delivery cycles."
+        },
+        {
+          "heading": "Coordination and stage logistics",
+          "body": "I incorporated feedback from the music, script, and choreography teams into the set design. I also handled backstage deployment, coordinating how the pieces would be moved and used during the performance."
+        }
+      ],
+      "spec": null,
+      "stack": [
+        "SolidWorks",
+        "Technical drawings",
+        "Wood fabrication",
+        "Budgeting and purchasing",
+        "Crew coordination",
+        "Stage logistics"
+      ],
+      "hero": null
+    },
+    {
+      "id": "booth-committee",
+      "title": "Spring Carnival Booth",
+      "meta": "CMU Spring Carnival · Booth Committee",
+      "body": "I helped build and decorate our Spring Carnival booth, worked from technical drawings, and troubleshot attachment points during assembly.",
+      "spec": null,
+      "stack": [
+        "Fabrication",
+        "Technical drawing reading",
+        "Attachment/assembly troubleshooting"
+      ],
+      "hero": null
+    }
+  ],
+  "backHref": "../index.html",
+  "backLabel": "← Back to site"
 };
 </script>
 
@@ -87,7 +127,7 @@ const PAGE = {
 (function(){
   const esc = s => String(s == null ? "" : s);
   const $ = id => document.getElementById(id);
-  document.title = PAGE.title + " — Ricardo Castro";
+  document.title = PAGE.title + " · Ricardo Castro";
   $("j-category").textContent = PAGE.classLabel;
   $("j-title").textContent = PAGE.title;
   $("j-sub").textContent = PAGE.subtitle;
@@ -100,17 +140,18 @@ const PAGE = {
   ).join("");
 
   function mediaHTML(m){
-    if(!m || m.type === "empty"){
+    if(!m) return "";
+    if(m.type === "empty"){
       return `<div class="frame frame-inline"><div class="frame-empty">
-        <span class="fe-tag">Media slot — empty</span>
+        <span class="fe-tag">Media to add</span>
         <span class="fe-note">${esc(m ? m.note : "")}</span>
-        <span class="fe-path">${esc(m ? m.src : "")}</span>
+
       </div></div>`;
     }
     if(m.type === "video"){
-      return `<div class="frame frame-inline"><video src="${esc(m.src)}" autoplay muted loop playsinline></video></div>`;
+      return `<div class="frame frame-inline"><video src="${esc(m.src)}" controls playsinline preload="metadata"></video></div>`;
     }
-    return `<div class="frame frame-inline"><img src="${esc(m.src)}" alt="" loading="lazy"></div>`;
+    return `<div class="frame frame-inline"><img src="${esc(m.src)}" alt="${esc(m.alt || m.note || PAGE.title)}" loading="lazy"></div>`;
   }
 
   $("j-projects").innerHTML = PAGE.projects.map(p => `
@@ -118,6 +159,7 @@ const PAGE = {
       <h2>${esc(p.title)}</h2>
       <p class="proj-meta-line">${esc(p.meta)}</p>
       <p class="proj-body">${esc(p.body)}</p>
+      ${(p.details || []).map(d => `<div class="proj-detail"><h3>${esc(d.heading)}</h3><p class="proj-body">${esc(d.body)}</p></div>`).join("")}
       ${p.spec ? `<div class="stack-row"><div class="stack-key">${esc(p.spec.label)}</div><div class="stack-val">${esc(p.spec.value)}</div></div>` : ""}
       ${mediaHTML(p.hero)}
       <div class="stack-row"><div class="stack-key">Stack</div><div class="stack-val">${p.stack.map(esc).join(" · ")}</div></div>

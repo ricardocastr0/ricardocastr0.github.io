@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Robotic-hand mechanisms · Ricardo Castro</title>
+<meta name="description" content="Parametric design, finger and linkage prototypes, and glove-to-servo teleoperation at Origami Robotics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../nav.css">
+<link rel="stylesheet" href="../subpage.css">
+</head>
+<body>
+<script>window.NAV_BASE = "../";</script>
+<div id="site-nav"></div>
+
+<!-- ============================================================= -->
+<!--  EDIT ZONE                                                    -->
+<!-- ============================================================= -->
+<script>
+const PAGE = {
+  "classLabel": "Industry experience",
+  "classNumber": "",
+  "links": [],
+  "backHref": "../index.html#projects",
+  "backLabel": "← Selected engineering work",
+  "classTitle": "Robotic hands",
+  "title": "Robotic-hand mechanisms",
+  "subtitle": "Parametric design, finger and linkage prototypes, and glove-to-servo teleoperation at Origami Robotics.",
+  "meta": [
+    {
+      "label": "Organization",
+      "value": "Origami Robotics"
+    },
+    {
+      "label": "Role",
+      "value": "Mechanical Design Intern"
+    },
+    {
+      "label": "Timeline",
+      "value": "Aug 2025 – Jan 2026"
+    },
+    {
+      "label": "Focus",
+      "value": "Mechanisms · Teleoperation"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "My contribution",
+      "body": "I designed parametric mechanisms in Onshape and FeatureScript, prototyped fingers and linkages, and worked on glove potentiometer-to-servo control."
+    },
+    {
+      "heading": "How the system works",
+      "body": "Potentiometers on the glove measure hand motion and provide inputs for the robotic hand’s servos. I worked on finger and linkage prototypes for this teleoperation system."
+    },
+    {
+      "heading": "Prototype outcome",
+      "body": "The project reported a 50% reduction in prototype mass and cost. Baseline values and the comparison method are not included here."
+    }
+  ],
+  "stack": {
+    "Design": [
+      "Onshape",
+      "FeatureScript",
+      "Finger/linkage prototyping"
+    ],
+    "Integration": [
+      "Glove potentiometers",
+      "Servo actuation"
+    ]
+  },
+  "takeaway": "My work focused on the hand’s mechanisms and glove control."
+};
+</script>
+
+<!-- ============================================================= -->
+<!--  STOP.                                                        -->
+<!-- ============================================================= -->
+
+<div class="wrap">
+  <div class="top"><a class="back" href="" id="j-back-top"></a></div>
+  <header class="hero">
+    <div class="eyebrow" id="j-category"></div>
+    <h1 id="j-title"></h1>
+    <p class="hero-sub" id="j-sub"></p>
+    <div class="metablock" id="j-meta"></div>
+    <p class="caption">Project images are not shared publicly.</p>
+  </header>
+  <main id="j-sections"></main>
+  <section class="sec">
+    <div class="sec-head"><h2>Stack</h2><span class="line"></span></div>
+    <div class="stack" id="j-stack"></div>
+  </section>
+  <section class="sec">
+    <div class="sec-head"><h2>Takeaway</h2><span class="line"></span></div>
+    <div class="takeaway">
+
+      <p id="j-takeaway"></p>
+    </div>
+    <ul class="linksout" id="j-linksout"></ul>
+  </section>
+  <footer>
+    <a class="foot-back" href="" id="j-back-foot"></a>
+    <span class="eyebrow">Ricardo Castro</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  const esc = s => String(s == null ? "" : s);
+  const $ = id => document.getElementById(id);
+  document.title = PAGE.title + " · Ricardo Castro";
+  $("j-category").textContent = PAGE.classLabel + " · " + PAGE.classTitle;
+  $("j-title").textContent = PAGE.title;
+  $("j-sub").textContent = PAGE.subtitle;
+  $("j-takeaway").textContent = PAGE.takeaway;
+  $("j-back-top").href = PAGE.backHref;
+  $("j-back-top").textContent = PAGE.backLabel;
+  $("j-back-foot").href = PAGE.backHref;
+  $("j-back-foot").textContent = PAGE.backLabel;
+  $("j-meta").innerHTML = PAGE.meta.map(m =>
+    `<div class="mb-cell"><span class="mb-label">${esc(m.label)}</span><span class="mb-value">${esc(m.value)}</span></div>`
+  ).join("");
+  $("j-sections").innerHTML = PAGE.sections.map(s => `
+    <section class="sec">
+      <div class="sec-head"><h2>${esc(s.heading)}</h2><span class="line"></span></div>
+      <p>${esc(s.body)}</p>
+    </section>
+  `).join("");
+  $("j-stack").innerHTML = Object.entries(PAGE.stack).map(([k, arr]) => `
+    <div class="stack-row">
+      <div class="stack-key">${esc(k)}</div>
+      <div class="stack-val">${arr.map(esc).join(" · ")}</div>
+    </div>
+  `).join("");
+  $("j-linksout").innerHTML = (PAGE.links || []).map(l =>
+    `<li><a href="${esc(l.href)}">${esc(l.label)}</a></li>`
+  ).join("");
+})();
+</script>
+
+<script src="../nav.js"></script>
+
+</body>
+</html>

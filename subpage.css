@@ -31,7 +31,10 @@ a{color:inherit}
 .frame{position:relative;background:var(--card);border:1px solid var(--rule);overflow:hidden}
 .frame-hero{aspect-ratio:16/9;margin:28px 0 0}
 .frame-inline{aspect-ratio:4/3;margin:22px 0 8px}
-.frame img,.frame video{width:100%;height:100%;object-fit:cover;display:block}
+.frame:has(.frame-empty){aspect-ratio:auto;min-height:180px}
+.frame:has(.frame-empty) .frame-empty{position:relative;min-height:180px;justify-content:center}
+.hero h1,.mb-value,.stack-val{overflow-wrap:anywhere}
+.frame img,.frame video{width:100%;height:100%;object-fit:contain;display:block}
 .frame-empty{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;padding:18px}
 .frame-empty::before{content:"";position:absolute;inset:12px;border:1.5px dashed var(--rule)}
 .fe-tag{position:relative;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);font-weight:600}
@@ -68,6 +71,8 @@ footer{margin-top:64px;border-top:2px solid var(--ink);padding:22px 0 56px;displ
 .proj-block .proj-meta-line{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-2);letter-spacing:.02em;margin:0 0 16px}
 .proj-block .proj-hook{max-width:65ch;font-size:17px;margin:0 0 16px}
 .proj-block .proj-body{max-width:70ch;font-size:16px;margin:0 0 6px}
+.proj-detail{margin-top:22px}
+.proj-detail h3{font-size:18px;font-weight:600;margin:0 0 8px}
 .readmore{display:inline-block;margin-top:14px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--stress)}
 .readmore:hover{text-decoration:underline}
 
