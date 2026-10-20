@@ -87,3 +87,29 @@ footer{margin-top:64px;border-top:2px solid var(--ink);padding:22px 0 56px;displ
   .frame-hero{aspect-ratio:4/3}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+
+/* Continuous project articles: facts in the margin, prose in one column. */
+.article-page{background-image:none}
+.article-header{padding:48px 0 34px;max-width:850px}
+.article-header h1{font-family:"Archivo",sans-serif;font-size:clamp(36px,6vw,64px);line-height:1.08;letter-spacing:-.025em;margin:14px 0 18px;overflow-wrap:anywhere}
+.article-intro{font-size:clamp(19px,2.2vw,23px);line-height:1.5;max-width:58ch;margin:0;color:var(--ink-2)}
+.article-layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:48px;border-top:1px solid var(--rule);padding-top:32px;align-items:start}
+.article-facts dl{margin:0}
+.article-facts dl>div{margin-bottom:22px}
+.article-facts dt{font-family:"IBM Plex Mono",monospace;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-2);margin-bottom:5px}
+.article-facts dd{margin:0;font-size:14px;line-height:1.6}
+.article-copy{min-width:0;max-width:70ch}
+.article-copy>p{font-size:18px;line-height:1.75;margin:0 0 24px}
+.article-copy .article-note{border-top:1px solid var(--rule);padding-top:18px;margin-top:30px;font-size:14px;color:var(--ink-2)}
+.article-figure{margin:30px 0}
+.article-figure img{display:block;width:100%;height:auto;background:var(--card);border:1px solid var(--rule)}
+.article-figure figcaption{font-size:13px;line-height:1.55;color:var(--ink-2);margin-top:10px}
+.proj-block .proj-body{font-size:17px;line-height:1.75;margin-bottom:18px}
+@media(max-width:720px){
+  .article-header{padding:32px 0 26px}
+  .article-layout{grid-template-columns:1fr;gap:22px;padding-top:24px}
+  .article-facts dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+  .article-facts dl>div{margin:0}
+  .article-facts dd{overflow-wrap:anywhere}
+  .article-copy>p{font-size:17px}
+}

@@ -1,67 +1,42 @@
-# Media and evidence checklist
+# Portfolio content checklist
 
-## Gather these first
+Updated September 30, 2026 after Ricardo's review.
 
-1. Bigfoot: a walking video, annotated CAD image, and one test plot or trial sheet
-2. Bike carrier: CAD render, concept sketches, and labeled FEA plot
-3. Vision and scissors: hardware photos and labeled results plots
+## Confirmed and complete
 
-Origami and Nucor are text-only. Ricardo confirmed on September 30, 2026 that no images can be shared from either role because the work is NDA-adjacent. Do not request photos, screenshots, CAD exports, diagrams, comparison graphics, or video from those projects.
+- Resume: Ricardo confirmed the current PDF is good. Keep the download link
+- Bike carrier: both supplied images are installed. The render shows folded and open configurations, so a separate folded-view image is unnecessary
+- Bike carrier mass: 80.2 to 27.6 kg is CAD-estimated. The rack was not fabricated
+- Bike FEA image: von Mises stress in MPa, with a displayed maximum of 111.547 MPa. It is not the safety-factor plot
+- Greek Sing: two productions, learning wood fabrication, a modular staircase, limited build time, and creative-team collaboration. Existing figures remain tied to 2025
+- Booth: learning woodworking and large-scale assembly, reading drawings, solving attachment problems, and collaborating on a creative structure
+- Origami/Nucor: Ricardo confirmed the written summaries are suitable. Both remain text-only; do not request project media
 
-Clear original photos, CAD exports, and labeled plots from the other projects are enough. Send original files when possible; exact filenames can be handled when adding them to the site.
+## Bigfoot publication plan
 
-For each image or clip, include a short caption with what it shows and which parts you worked on. For plots, include units and test conditions. For videos, identify any assistance or support used during the demonstration.
+Keep a concise contribution overview now. The paper is submitted, not published. No project images, clips, CAD, or test-result placeholders are displayed. The existing bigfoot.jpg file is retained but unused. Add the actual paper link and publication details when Ricardo supplies them after publication. Do not treat this as a current media-gathering task.
 
-## Full list of reserved media
+## Still useful to add
 
-Media slots are already reserved in the project pages. Place each file in `media/`, find its filename in the relevant page's `PAGE` object, and change `type` from `empty` to `image` or `video`. Add an `alt` description for images; use `note` as a fallback. Video uses visible controls; a `poster` path is optional. Replace placeholder captions with captions describing the actual evidence.
-
-Use only material you can share publicly. Keep unknown results unknown; do not substitute illustrative or generated images for engineering evidence.
-
-| Page | Reserved file | What to supply |
+| Project | Missing item | Purpose |
 | --- | --- | --- |
-| Bigfoot | `bigfoot-annotated-cad.png` | Mark components personally designed; distinguish inherited lab design |
-| Bigfoot | `bigfoot-system.png` | Pi/CAN/actuator/control architecture and motion-capture setup |
-| Bigfoot | `bigfoot-walking.mp4` | Physical walking with conditions and any assistance identified |
-| Bigfoot | `bigfoot-test-results.png` | Trial conditions, observation or measurement, and one design comparison |
-| Bike carrier | `bike-carrier-render.png` | Final CAD assembly |
-| Bike carrier | `bike-carrier-concepts.png` | Compared concepts and selection criteria |
-| Bike carrier | `bike-carrier-fea.png` | Loads, restraints, units, and safety-factor result |
-| Bike carrier | `bike-carrier-final.png` | Final folded assembly; clearly label as CAD if rendered |
-| Vision | `defect-detection.png` | Annotated detection example |
-| Vision | `defect-training-curves.png` | Labeled comparison/validation results |
-| Vision | `defect-hardware.jpg` | Actual camera/Python/Arduino alert setup |
-| Scissors | `scissors-response.png` | Measured or simulated response, with units and cutting load |
+| Bike carrier | Load magnitudes/directions, restraints, material assignments, and relevant mesh assumptions | Make the supplied stress plot interpretable |
+| Bike carrier | Safety-factor result, only if retaining the previously reported 2.465 value | Current image does not verify that number; it is omitted from the public page |
+| Bike carrier | Concept sketches and selection criteria, optional | Explain choice among the four designs |
+| Defect detection | Detection frame, training/validation plot, and camera/Arduino photo | Show the prototype and its measured limits |
+| Defect detection | Ricardo's individual contribution within the team | Clarify ownership |
+| Scissors | Controller-response plot with units, load, and simulated/measured label | Support the control implementation description |
+| Scissors | Individual contribution and project date | Clarify ownership and timeline |
+| Other group coursework | Individual contribution, if adding more detail | Separate personal work from team outcomes |
 
-Displayed images remain in place: `bigfoot.jpg`, `scissors.png`, and `rink.png`. Greek Sing and Booth are text-only for now at Ricardo's request. Their files, `greek-sing.png` and `booth.png`, are kept in `media/` for possible later use, but are not displayed and have no empty image placeholders.
+No further Greek Sing or Booth details are required for the current overview. A specific construction fix could be added later if useful.
 
-## Greek Sing and Booth description prompts
+## Media files
 
-Answer in rough notes; these prompts are for editing and do not appear on the site.
+In use: bike-carrier-render.png, bike-carrier-fea.png, scissors.png, rink.png.
 
-### Greek Sing
+Hidden but retained: bigfoot.jpg, greek-sing.png, booth.png.
 
-Ricardo has served as Sets Chair for two different shows. The description covers both productions, with the supplied figures explicitly attributed to the 2025 show: more than eight set pieces, 200+ build hours, a $1,700 budget, and three material delivery cycles. These are not combined totals or claims about both shows. Examples include SolidWorks structural models and fabrication drawings, wheeled backdrops, hinged frames, spiral stairs, and coordination with the music, script, and choreography teams. Photos remain hidden.
+Optional future filenames: bike-carrier-concepts.png, defect-detection.png, defect-training-curves.png, defect-hardware.jpg, scissors-response.png. There are no empty media panels on the public pages. Defect-detection slots remain in page data. For its images, change type from empty to image and supply descriptive alt text. The new bike-carrier page uses ordinary HTML figures. Add any new scissors plot as a figure when supplied.
 
-Optional details for a future revision:
-
-- One specific construction or stage-change problem, what you changed, and how it worked during the show
-- How the frames, stairs, or backdrops connected and moved between the shop and stage
-
-### Spring Carnival Booth
-
-- Which parts did you personally build, decorate, or install?
-- What drawings, materials, tools, and joining methods did you use?
-- Describe one attachment or assembly problem and how you fixed it
-- What was the result, and what was your responsibility compared with the rest of the team?
-
-## Text details still to fill
-
-- Bigfoot: one specific engineering constraint, alternatives considered, chosen design change, and observed test outcome; paper title/venue/link only when available and shareable
-- Origami and Nucor: keep the current text-only overviews; any future text additions must be information Ricardo can share publicly
-- Bike carrier: measured versus CAD-estimated mass; FEA assumptions; personal task split
-- Vision and other group coursework: personal implementation ownership versus team results; links to shareable code/report
-- Scissors: timeline, task split, controller response and whether tests included users; ergonomic benefit is not established by design intent
-- Resume: confirm which current variant should replace `resume.pdf`; optional additional variants should link only after their real files are supplied
-
-Keep pending details in this checklist until verified. Replace the corresponding public “evidence to add” text when actual results are available.
+For shared media, use original files and include a factual caption, personal contribution, units, and test conditions where relevant.

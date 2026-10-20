@@ -60,7 +60,7 @@ const PAGE = {
     },
     {
       "heading": "Approach",
-      "body": "We compared YOLOv9 and YOLOv11, then extended training of YOLOv11. A Python inference loop and serial bridge sent detections to an Arduino Uno LED. Individual team responsibilities still need to be added.",
+      "body": "We compared YOLOv9 and YOLOv11, then extended training of YOLOv11. A Python inference loop and serial bridge sent detections to an Arduino Uno LED.",
       "media": {
         "type": "empty",
         "src": "../media/defect-training-curves.png",
@@ -157,13 +157,7 @@ const PAGE = {
   ).join("");
   function mediaHTML(m, klass){
     const cls = "frame " + klass;
-    if(!m || m.type === "empty"){
-      return `<div class="${cls}"><div class="frame-empty">
-        <span class="fe-tag">Media to add</span>
-        <span class="fe-note">${esc(m ? m.note : "")}</span>
-
-      </div></div>`;
-    }
+    if(!m || m.type === "empty") return "";
     if(m.type === "video"){
       return `<div class="${cls}"><video src="${esc(m.src)}" ${m.poster ? `poster="${esc(m.poster)}"` : ""} controls playsinline preload="metadata"></video></div>`;
     }
@@ -174,7 +168,7 @@ const PAGE = {
     <section class="sec">
       <div class="sec-head"><h2>${esc(s.heading)}</h2><span class="line"></span></div>
       <p>${esc(s.body)}</p>
-      ${s.media ? mediaHTML(s.media, "frame-inline") + (s.media.caption ? `<p class="caption">${esc(s.media.caption)}</p>` : "") : ""}
+      ${s.media && s.media.type !== "empty" ? mediaHTML(s.media, "frame-inline") + (s.media.caption ? `<p class="caption">${esc(s.media.caption)}</p>` : "") : ""}
     </section>
   `).join("");
   $("j-stack").innerHTML = Object.entries(PAGE.stack).map(([k, arr]) => `

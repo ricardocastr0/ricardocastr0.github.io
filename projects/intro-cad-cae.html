@@ -3,201 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Intro to CAD/CAE Tools (24-688) · Ricardo Castro</title>
-<meta name="description" content="Class project from CMU 24-688 Introduction to CAD and CAE Tools · a two-bike hitch rack designed from concept through FEA-driven optimization and DFM for volume production.">
+<title>Hitch-mounted bike carrier · Ricardo Castro</title>
+<meta name="description" content="A folding two-bike rack developed as a CAD and structural-analysis project. It was not fabricated.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../nav.css">
 <link rel="stylesheet" href="../subpage.css">
 </head>
-<body>
-<script>window.NAV_BASE = "../";</script>
-<div id="site-nav"></div>
-
-<!-- ============================================================= -->
-<!--  EDIT ZONE                                                    -->
-<!-- ============================================================= -->
-<script>
-const PAGE = {
-  "classLabel": "Class Project",
-  "classTitle": "Intro to CAD/CAE Tools",
-  "classNumber": "24-688",
-  "title": "Hitch-Mounted Bike Carrier",
-  "subtitle": "A two-bike hitch rack designed with CAD, structural FEA, and a manufacturing cost estimate.",
-  "meta": [
-    {
-      "label": "Course",
-      "value": "24-688 Introduction to CAD and CAE Tools"
-    },
-    {
-      "label": "Role",
-      "value": "Team of 4 · concept lead, FEA, materials"
-    },
-    {
-      "label": "Costing scenario",
-      "value": "45,000 units · planning only"
-    },
-    {
-      "label": "Timeline",
-      "value": "Fall 2025"
-    }
-  ],
-  "hero": {
-    "type": "empty",
-    "src": "../media/bike-carrier-render.png",
-    "poster": "",
-    "note": "Final CAD render of the rack mounted on a vehicle."
-  },
-  "sections": [
-    {
-      "heading": "Context",
-      "body": "The course brief called for a two-bike hitch rack that folds for storage, is easy to install and remove, and fits multiple bike sizes. Our team developed the design and a manufacturing cost estimate for a hypothetical 45,000-unit volume.",
-      "media": null
-    },
-    {
-      "heading": "Constraints",
-      "body": "The rack had to fit a standard 2-inch receiver hitch and carry two full-size bikes. We considered static and dynamic loads, the folded storage footprint, and manufacturing cost. The manufacturing plan included CNC machining, tube bending, and robotic welding.",
-      "media": {
-        "type": "empty",
-        "src": "../media/bike-carrier-concepts.png",
-        "caption": "Concept sketches · four candidate approaches evaluated against the brief.",
-        "note": "Four concept sketches with the selection criteria."
-      }
-    },
-    {
-      "heading": "Approach",
-      "body": "We selected a folding platform-tray design from four concepts. Static FEA showed a stress concentration at the hitch connection. We added support prongs and reinforced the wheel-cradle arms, then used aluminum for most components while retaining steel at the hitch joint. The manufacturing plan assigned machining, tube bending, and welding processes to the subassemblies.",
-      "media": {
-        "type": "empty",
-        "src": "../media/bike-carrier-fea.png",
-        "caption": "FEA result: reported minimum safety factor 2.465 under the modeled conditions.",
-        "note": "The FEA safety-factor plot from the slide deck (the one with the color legend and Min 2.465 callout)."
-      }
-    },
-    {
-      "heading": "Results",
-      "body": "Reported assembly mass fell from 80.2 to 27.6 kg, a reduction of about 66%. The mass values still need to be identified as measured or CAD-estimated. The minimum FEA safety factor was 2.465 under the modeled conditions. These were design and simulation results. The 45,000-unit volume was a costing assumption.",
-      "media": {
-        "type": "empty",
-        "src": "../media/bike-carrier-final.png",
-        "caption": "Final assembly, folded position · mounted to the vehicle.",
-        "note": "The final rendered image showing the rack mounted on the car (from the slide deck)."
-      }
-    }
-  ],
-  "stack": {
-    "CAD": [
-      "Fusion 360",
-      "Parametric modeling",
-      "Assembly design"
-    ],
-    "Simulation": [
-      "Static stress FEA",
-      "Von Mises",
-      "Safety-factor analysis"
-    ],
-    "Manufacturing": [
-      "CNC machining",
-      "Tube bending",
-      "Robotic welding"
-    ],
-    "Design": [
-      "DFM/DFA",
-      "Cost estimation",
-      "Concept evaluation matrix"
-    ]
-  },
-  "takeaway": "We changed the geometry and materials around the hitch connection to reduce reported mass while retaining the required simulated safety factor. The load assumptions and comparison figures will be added with the FEA plots.",
-  "links": [],
-  "backHref": "../index.html",
-  "backLabel": "← Back to site"
-};
-</script>
-
-<!-- ============================================================= -->
-<!--  STOP.                                                        -->
-<!-- ============================================================= -->
-
+<body class="article-page">
+<script>window.NAV_BASE = "../";</script><div id="site-nav"></div>
 <div class="wrap">
-  <div class="top"><a class="back" href="" id="j-back-top"></a></div>
-  <header class="hero">
-    <div class="eyebrow" id="j-category"></div>
-    <h1 id="j-title"></h1>
-    <p class="hero-sub" id="j-sub"></p>
-    <div class="metablock" id="j-meta"></div>
-    <div id="j-hero"></div>
-  </header>
-  <main id="j-sections"></main>
-  <section class="sec">
-    <div class="sec-head"><h2>Stack</h2><span class="line"></span></div>
-    <div class="stack" id="j-stack"></div>
-  </section>
-  <section class="sec">
-    <div class="sec-head"><h2>Takeaway</h2><span class="line"></span></div>
-    <div class="takeaway">
-
-      <p id="j-takeaway"></p>
-    </div>
-    <ul class="linksout" id="j-linksout"></ul>
-  </section>
-  <footer>
-    <a class="foot-back" href="" id="j-back-foot"></a>
-    <span class="eyebrow">Ricardo Castro</span>
-  </footer>
-</div>
-
-<script>
-(function(){
-  const esc = s => String(s == null ? "" : s);
-  const $ = id => document.getElementById(id);
-  document.title = PAGE.classTitle + " (" + PAGE.classNumber + ") · Ricardo Castro";
-  $("j-category").textContent = PAGE.classLabel + " · " + PAGE.classNumber + " " + PAGE.classTitle;
-  $("j-title").textContent = PAGE.title;
-  $("j-sub").textContent = PAGE.subtitle;
-  $("j-takeaway").textContent = PAGE.takeaway;
-  $("j-back-top").href = PAGE.backHref;
-  $("j-back-top").textContent = PAGE.backLabel;
-  $("j-back-foot").href = PAGE.backHref;
-  $("j-back-foot").textContent = PAGE.backLabel;
-  $("j-meta").innerHTML = PAGE.meta.map(m =>
-    `<div class="mb-cell"><span class="mb-label">${esc(m.label)}</span><span class="mb-value">${esc(m.value)}</span></div>`
-  ).join("");
-  function mediaHTML(m, klass){
-    const cls = "frame " + klass;
-    if(!m || m.type === "empty"){
-      return `<div class="${cls}"><div class="frame-empty">
-        <span class="fe-tag">Media to add</span>
-        <span class="fe-note">${esc(m ? m.note : "")}</span>
-
-      </div></div>`;
-    }
-    if(m.type === "video"){
-      return `<div class="${cls}"><video src="${esc(m.src)}" ${m.poster ? `poster="${esc(m.poster)}"` : ""} controls playsinline preload="metadata"></video></div>`;
-    }
-    return `<div class="${cls}"><img src="${esc(m.src)}" alt="${esc(m.alt || m.note || PAGE.title)}" loading="lazy"></div>`;
-  }
-  $("j-hero").innerHTML = mediaHTML(PAGE.hero, "frame-hero");
-  $("j-sections").innerHTML = PAGE.sections.map(s => `
-    <section class="sec">
-      <div class="sec-head"><h2>${esc(s.heading)}</h2><span class="line"></span></div>
-      <p>${esc(s.body)}</p>
-      ${s.media ? mediaHTML(s.media, "frame-inline") + (s.media.caption ? `<p class="caption">${esc(s.media.caption)}</p>` : "") : ""}
-    </section>
-  `).join("");
-  $("j-stack").innerHTML = Object.entries(PAGE.stack).map(([k, arr]) => `
-    <div class="stack-row">
-      <div class="stack-key">${esc(k)}</div>
-      <div class="stack-val">${arr.map(esc).join(" · ")}</div>
-    </div>
-  `).join("");
-  $("j-linksout").innerHTML = (PAGE.links || []).map(l =>
-    `<li><a href="${esc(l.href)}">${esc(l.label)}</a></li>`
-  ).join("");
-})();
-</script>
-
-<script src="../nav.js"></script>
-
-</body>
-</html>
+<div class="top"><a class="back" href="../index.html#projects">← Selected work</a></div>
+<header class="article-header"><p class="eyebrow">CMU 24-688 · CAD and CAE</p><h1>Hitch-mounted bike carrier</h1><p class="article-intro">A folding two-bike rack developed as a CAD and structural-analysis project. It was not fabricated.</p></header>
+<main class="article-layout">
+<aside class="article-facts" aria-label="Project facts"><dl><div><dt>Timeline</dt><dd>Fall 2025</dd></div><div><dt>Team</dt><dd>Four students</dd></div><div><dt>My role</dt><dd>Concept lead, FEA, materials</dd></div><div><dt>CAD mass</dt><dd>80.2 → 27.6 kg</dd></div><div><dt>Costing scenario</dt><dd>45,000 units · planning only</dd></div><div><dt>Tools</dt><dd>Fusion 360, static stress FEA, material selection, manufacturing cost estimation</dd></div></dl></aside>
+<article class="article-copy" aria-label="Project overview"><p>Our team designed a rack for a standard 2-inch receiver hitch that could carry two bikes and fold for storage. I worked on concept development, FEA, and materials. We selected a folding platform-tray design from four concepts, considering installation, bike-size compatibility, and storage space.</p><figure class="article-figure"><a href="../media/bike-carrier-render.png" target="_blank" rel="noopener" aria-label="Open full-size image: CAD model of the bike carrier, folded on the left and open on the right"><img src="../media/bike-carrier-render.png" alt="CAD model of the bike carrier, folded on the left and open on the right" loading="lazy"></a><figcaption>Folded and open configurations in CAD. Neither configuration was fabricated.</figcaption></figure>
+<p>Static FEA identified a stress concentration at the hitch connection. We revised the geometry with support prongs and reinforced wheel-cradle arms. We also used aluminum for most components while retaining steel at the hitch joint.</p>
+<p>The CAD-estimated assembly mass decreased from 80.2 to 27.6 kg, about 66%. These figures describe the model, not a weighed prototype. The stress plot below shows a maximum von Mises stress of 111.547 MPa for the displayed simulation. Loads, restraints, and material properties determine how that result should be interpreted.</p><figure class="article-figure"><a href="../media/bike-carrier-fea.png" target="_blank" rel="noopener" aria-label="Open full-size image: Von Mises stress plot of the modeled bike carrier with a displayed maximum of 111.547 MPa"><img src="../media/bike-carrier-fea.png" alt="Von Mises stress plot of the modeled bike carrier with a displayed maximum of 111.547 MPa" loading="lazy"></a><figcaption>Von Mises stress in MPa. The displayed maximum is 111.547 MPa. This image shows stress, not a safety-factor result. Open the image for full resolution.</figcaption></figure>
+<p>We also developed a manufacturing and costing plan using CNC machining, tube bending, and robotic welding at a hypothetical 45,000-unit volume. This was a design exercise; no racks were manufactured.</p></article>
+</main>
+<footer><a class="foot-back" href="../index.html#projects">← Selected work</a><span class="eyebrow">Ricardo Castro</span></footer>
+</div><script src="../nav.js"></script></body></html>

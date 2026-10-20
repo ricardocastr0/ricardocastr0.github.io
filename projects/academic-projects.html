@@ -59,19 +59,13 @@ const PAGE = {
       "id": "greek-sing-sets",
       "title": "Greek Sing Sets",
       "meta": "Phi Delta Theta, CMU · Two productions · Sets Chair",
-      "body": "Greek Sing is a student musical theater competition at Carnegie Mellon. Fraternity and sorority pairs stage 12–15 minute musicals and raise money for local nonprofits. I have served as Sets Chair for two different shows, leading set design, construction, and backstage deployment with our partner sorority.",
+      "body": "I have served as Sets Chair for two Greek Sing shows at CMU, leading the design, construction, and backstage deployment of the sets. These student musicals gave me a reason to build large structures for a creative purpose, while learning to work with wood and fabrication tools that were new to me.",
       "details": [
         {
-          "heading": "Design and fabrication",
-          "body": "My role covers CAD, fabrication drawings, and hands-on construction. For the 2025 production, I modeled all structural components in SolidWorks and led the build of more than eight custom set pieces, including wheeled backdrops, hinged frames, and spiral stairs. That production involved more than 200 hours of build work using jigsaws, miter saws, circular saws, and bore bits."
+          "body": "One key element was a modular staircase. With limited fabrication experience and a short build window, I had to learn the tools while helping turn the design into a structure the production could use. I worked in SolidWorks and produced fabrication drawings, then took part in the hands-on build using jigsaws, miter saws, circular saws, and bore bits."
         },
         {
-          "heading": "Budget and materials",
-          "body": "The role includes budgeting and ordering materials around the production schedule. For the 2025 show, I managed a $1,700 budget and ordered raw materials across three major delivery cycles."
-        },
-        {
-          "heading": "Coordination and stage logistics",
-          "body": "I incorporated feedback from the music, script, and choreography teams into the set design. I also handled backstage deployment, coordinating how the pieces would be moved and used during the performance."
+          "body": "The work depended on communication with the music, script, and choreography teams. Their needs shaped the set, and I coordinated how the pieces would be moved and used backstage. For the 2025 show, I led more than 200 build hours across more than eight set pieces and managed a $1,700 materials budget."
         }
       ],
       "spec": null,
@@ -89,14 +83,19 @@ const PAGE = {
       "id": "booth-committee",
       "title": "Spring Carnival Booth",
       "meta": "CMU Spring Carnival · Booth Committee",
-      "body": "I helped build and decorate our Spring Carnival booth, worked from technical drawings, and troubleshot attachment points during assembly.",
+      "body": "Spring Carnival Booth gave me another opportunity to learn woodworking and build at a larger scale. I helped with construction and decoration, worked from technical drawings, and troubleshot attachment points during assembly.",
       "spec": null,
       "stack": [
         "Fabrication",
         "Technical drawing reading",
         "Attachment/assembly troubleshooting"
       ],
-      "hero": null
+      "hero": null,
+      "details": [
+        {
+          "body": "Working with the team meant connecting practical construction decisions with a creative design. I was learning unfamiliar tools and materials while collaborating on a structure whose purpose went beyond an engineering assignment."
+        }
+      ]
     }
   ],
   "backHref": "../index.html",
@@ -159,7 +158,7 @@ const PAGE = {
       <h2>${esc(p.title)}</h2>
       <p class="proj-meta-line">${esc(p.meta)}</p>
       <p class="proj-body">${esc(p.body)}</p>
-      ${(p.details || []).map(d => `<div class="proj-detail"><h3>${esc(d.heading)}</h3><p class="proj-body">${esc(d.body)}</p></div>`).join("")}
+      ${(p.details || []).map(d => `<div class="proj-detail">${d.heading ? `<h3>${esc(d.heading)}</h3>` : ""}<p class="proj-body">${esc(d.body)}</p></div>`).join("")}
       ${p.spec ? `<div class="stack-row"><div class="stack-key">${esc(p.spec.label)}</div><div class="stack-val">${esc(p.spec.value)}</div></div>` : ""}
       ${mediaHTML(p.hero)}
       <div class="stack-row"><div class="stack-key">Stack</div><div class="stack-val">${p.stack.map(esc).join(" · ")}</div></div>

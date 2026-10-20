@@ -45,3 +45,17 @@ Publication was requested by Ricardo on September 30, 2026. Git history records 
 All nine portfolio pages rendered at a 390 px mobile viewport without horizontal overflow or broken loaded images during the initial review. The mobile menu and engineering-work submenu opened correctly. Inline scripts compiled, referenced local files were checked, and Git's whitespace check passed. Five existing media assets were retained. Homepage and project layouts were also inspected visually. External destination content and resume freshness were not revalidated.
 
 September 30 update: Ricardo confirmed that no Origami or Nucor images can be shared because the work is NDA-adjacent. Both pages are now text-only. Their six media slots and promises of future demonstrations were removed, leaving twelve slots for other projects. The media checklist reflects this restriction.
+
+## September 30 follow-up
+
+The following supersedes earlier recommendations to gather Bigfoot or industry media:
+
+- Bigfoot is a text overview until the paper is published. Its images and media requests are removed
+- Origami and Nucor remain text-only, with the existing written details confirmed by Ricardo
+- The supplied bike-carrier CAD render and stress plot are installed. Mass is CAD-estimated and nothing was fabricated. The image shows stress, not the previously reported safety factor
+- Greek Sing and Booth now emphasize learning wood fabrication and working with creative teams. Greek Sing includes the modular staircase, two shows, and a limited build window
+- The current resume was confirmed by Ricardo
+- Bigfoot, Origami, Nucor, and bike-carrier pages now use a continuous reading column with project facts beside it. Repeated short sections and takeaway boxes were removed
+- Public editing prompts and empty media panels were removed. The current outstanding details are in MEDIA_CHECKLIST.md
+
+Online references reviewed: https://www.kefanwu.com/ and https://marcusgreenan.com/. The adaptation uses compact project facts and direct project narratives, with the existing site typography and colors.

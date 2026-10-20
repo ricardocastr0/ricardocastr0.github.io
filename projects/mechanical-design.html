@@ -59,15 +59,6 @@ const PAGE = {
       "heading": "Approach",
       "body": "The cutting system was modeled in MATLAB and Simulink to tune PID gains under ramp inputs. The controller was then implemented and tested on Arduino. Design considerations included blade closure under different material loads and interruptions during a cut.",
       "media": null
-    },
-    {
-      "heading": "Evidence to add",
-      "body": "The test setup, blade-response data, and individual team responsibilities still need to be added.",
-      "media": {
-        "type": "empty",
-        "src": "../media/scissors-response.png",
-        "note": "Controller response · label input, output, units, cutting load, and whether the plot is simulated or measured."
-      }
     }
   ],
   "stack": {
@@ -142,13 +133,7 @@ const PAGE = {
   ).join("");
   function mediaHTML(m, klass){
     const cls = "frame " + klass;
-    if(!m || m.type === "empty"){
-      return `<div class="${cls}"><div class="frame-empty">
-        <span class="fe-tag">Media to add</span>
-        <span class="fe-note">${esc(m ? m.note : "")}</span>
-
-      </div></div>`;
-    }
+    if(!m || m.type === "empty") return "";
     if(m.type === "video"){
       return `<div class="${cls}"><video src="${esc(m.src)}" ${m.poster ? `poster="${esc(m.poster)}"` : ""} controls playsinline preload="metadata"></video></div>`;
     }
@@ -159,7 +144,7 @@ const PAGE = {
     <section class="sec">
       <div class="sec-head"><h2>${esc(s.heading)}</h2><span class="line"></span></div>
       <p>${esc(s.body)}</p>
-      ${s.media ? mediaHTML(s.media, "frame-inline") + (s.media.caption ? `<p class="caption">${esc(s.media.caption)}</p>` : "") : ""}
+      ${s.media && s.media.type !== "empty" ? mediaHTML(s.media, "frame-inline") + (s.media.caption ? `<p class="caption">${esc(s.media.caption)}</p>` : "") : ""}
     </section>
   `).join("");
   $("j-stack").innerHTML = Object.entries(PAGE.stack).map(([k, arr]) => `

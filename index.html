@@ -68,7 +68,7 @@ const SITE = {
       "role": "Robotics Research Assistant",
       "org": "Robomechanics Lab, CMU",
       "date": "Apr 2025 – Present",
-      "note": "Designed and built a 1 m quasi-passive biped, scaling a lab design 5×. Work includes MuJoCo design exploration, PD control, and Raspberry Pi 5/CAN actuator integration. The physical platform achieved walking.",
+      "note": "Designed and built a 1 m quasi-passive biped, with MuJoCo design exploration, PD control, and Raspberry Pi 5/CAN actuator integration. First author of a submitted paper.",
       "href": "projects/bigfoot.html",
       "featured": true
     },
@@ -116,14 +116,14 @@ const SITE = {
       "role": "Sets Chair",
       "org": "Greek Sing, Phi Delta Theta, CMU",
       "date": "Aug 2024 – Present",
-      "note": "Served as Sets Chair for two different musicals, leading set design, fabrication, and backstage deployment. Responsibilities include SolidWorks drawings, material purchasing, budgeting, and crew coordination.",
+      "note": "Led sets for two musicals, learning wood fabrication and building large structures with creative teams. Work included a modular staircase, SolidWorks drawings, budgeting, and backstage coordination.",
       "href": "projects/academic-projects.html#greek-sing-sets"
     },
     {
       "role": "Booth Committee Member",
       "org": "Spring Carnival, CMU",
       "date": "",
-      "note": "Hands-on building, decorating, and troubleshooting attachment points; reading technical drawings.",
+      "note": "Learned woodworking and large-scale assembly through a collaborative build, working from drawings and solving attachment problems alongside the creative work.",
       "href": "projects/academic-projects.html#booth-committee"
     }
   ],
@@ -131,10 +131,10 @@ const SITE = {
     {
       "title": "Bigfoot walking biped",
       "eyebrow": "Robotics hardware · Controls",
-      "body": "I designed and built a 1 m quasi-passive biped based on a lab design at 5× scale. I integrated the actuators and controls, and the robot achieved walking.",
+      "body": "My research in mechanical design, simulation, and control integration for a 1 m quasi-passive biped. A brief overview ahead of publication.",
       "links": [
         {
-          "label": "Design, integration & results →",
+          "label": "Research overview →",
           "href": "projects/bigfoot.html"
         }
       ]
@@ -420,7 +420,7 @@ footer{margin-top:64px;border-top:2px solid var(--ink);padding:22px 0 56px}
         </div>
         <div>
           <p class="exp-note">${esc(e.note)}</p>
-          ${e.href ? `<a class="exp-link" href="${esc(e.href)}">${e.featured ? "Read the full case study →" : "More →"}</a>` : ""}
+          ${e.href ? `<a class="exp-link" href="${esc(e.href)}">${e.featured ? "Research overview →" : "More →"}</a>` : ""}
         </div>
       </div>
     `).join("");
