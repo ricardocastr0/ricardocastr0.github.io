@@ -38,7 +38,7 @@ const PAGE = {
       "id": "rethink-the-rink",
       "title": "Rethink the Rink",
       "meta": "CMU × Covestro × Pittsburgh Penguins · 2024 & 2025",
-      "body": "I led material selection, CAD modeling, and prototyping for two Covestro-sponsored safety challenges. Our teams developed protective glove and neck guard concepts with Covestro engineers and the Pittsburgh Penguins. We explored layered materials for impact protection and range of motion, then presented our findings to the sponsors in 2024 and 2025.",
+      "body": "I led material selection, CAD modeling, and prototyping for two Covestro-sponsored safety challenges. Our teams developed protective glove and neck guard concepts with Covestro engineers and the Pittsburgh Penguins. The 2024 challenge focused on a neck guard and the 2025 challenge on gloves. We explored layered materials for impact protection and range of motion, then presented our findings to the sponsors in 2024 and 2025.",
       "spec": {
         "value": "2 awards",
         "label": "Most Innovative Design 2024 · Team MVP 2025"
@@ -59,13 +59,13 @@ const PAGE = {
       "id": "greek-sing-sets",
       "title": "Greek Sing Sets",
       "meta": "Phi Delta Theta, CMU · Two productions · Sets Chair",
-      "body": "I have served as Sets Chair for two Greek Sing shows at CMU, leading the design, construction, and backstage deployment of the sets. These student musicals gave me a reason to build large structures for a creative purpose, while learning to work with wood and fabrication tools that were new to me. The work included a 20 by 12 foot stage set with functional doors, layered platforms, and integrated automation for 40+ performers, with a 30+ person build crew across six production milestones.",
+      "body": "I have served as Sets Chair for two Greek Sing shows at CMU, leading the design, construction, and backstage deployment of the sets. These student musicals gave me a reason to build large structures for a creative purpose, while learning to work with wood and fabrication tools that were new to me. Across both productions, the work included a 20 by 12 foot stage set with functional doors, layered platforms, and integrated automation for 40+ performers, with a 30+ person build crew across six production milestones.",
       "details": [
         {
           "body": "One key element was a modular staircase. With limited fabrication experience and a short build window, I had to learn the tools while helping turn the design into a structure the production could use. I worked in SolidWorks and produced fabrication drawings, then took part in the hands-on build using jigsaws, miter saws, circular saws, and bore bits."
         },
         {
-          "body": "The work depended on communication with the music, script, and choreography teams. Their needs shaped the set, and I coordinated how the pieces would be moved and used backstage. I also wrote a transition report for the next chair."
+          "body": "The work depended on communication with the music, script, and choreography teams. Their needs shaped the set, and I coordinated how the pieces would be moved and used backstage. I also wrote a transition report for the next chair. The 2025 sets were smaller, built with a more constricted budget."
         }
       ],
       "spec": null,
@@ -155,6 +155,7 @@ const PAGE = {
 
   $("j-projects").innerHTML = PAGE.projects.map(p => `
     <section class="proj-block" id="${esc(p.id)}">
+      ${p.id === "greek-sing-sets" ? "<!-- TODO: add pictures of the 2024 sets later (photos intentionally hidden for now). -->" : ""}
       <h2>${esc(p.title)}</h2>
       <p class="proj-meta-line">${esc(p.meta)}</p>
       <p class="proj-body">${esc(p.body)}</p>
